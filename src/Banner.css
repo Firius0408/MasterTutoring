@@ -1,0 +1,21 @@
+.banner {
+    
+    height: 50vh;
+    position: relative;
+
+}
+
+.banner__info {
+    background-color: black;
+    color: white;
+    padding-top: 25 vh;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 40px;
+    width: 300px;
+}
+
+.banner__info >button{
+    background-color: #ff7779;
+    color:white
+}
