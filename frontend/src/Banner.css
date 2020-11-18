@@ -1,21 +1,48 @@
 .banner {
-    
-    height: 50vh;
+    background-image: url(./updatedbanner.png);
+    background-size: 1000px 500px;
+    height: 65vh;
     position: relative;
-
 }
 
 .banner__info {
+    color: white;
+    font-size: xx-large;
+    padding-top: 20vh;
+    padding-left:200px;
+    padding-right: 50px;
+    padding-bottom:40px;
+    margin-left: 200x;
+    background-size: 500px 500px;
+    height: 65vh;
+}
+.banner__info > button {
     background-color: black;
     color: white;
-    padding-top: 25 vh;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 40px;
-    width: 300px;
+    margin-top:20px;
+    font-weight:600;
+    text-transform:inherit;
 }
 
-.banner__info >button{
-    background-color: #ff7779;
-    color:white
+.banner__info > button:hover {
+    background-color: white;
+    color: black;
+}
+
+.banner__searchButton{
+    background-color:black !important;
+    font-weight:900 !important;
+    text-transform:inherit !important;
+    color: white !important;
+}
+
+.banner__search{
+    display: flex;
+    flex-direction: column;
+}
+
+/*the Following is not working yet*/
+.banner__search > button:hover {
+    background-color: white;
+    color: black;
 }

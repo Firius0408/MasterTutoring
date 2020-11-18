@@ -16,10 +16,9 @@ function Header() {
            </div>
 
            <div className='header__right'>
-               <p>Become a Tutor</p>
-               <LanguageIcon />
-               <ExpandMoreIcon />
-               <Avatar />
+               <p>Login</p>
+               <p>Register</p>
+               <p>Become A Tutor</p>
            </div>
         </div>
     )

@@ -11,14 +11,14 @@
 }
 .header__icon{
     object-fit:contain;
-    height: 70px;
+    height: 40px;
     margin-left:20px;
 }
 
 .header__center{
     display:flex;
     flex:1;
-    align-items:center;
+    align-items:right;
     max-width: fit-content;
     padding: 10px;
     height: 30px;
@@ -28,7 +28,7 @@
 
 .header__center >input {
     border: none;
-    width:250px;
+    width:400px;
     padding: 10px;
     outline-width:0;
 }
