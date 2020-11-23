@@ -29,7 +29,7 @@
 .header__center >input {
     border: none;
     width:400px;
-    padding: 10px;
+    padding: 20px;
     outline-width:0;
 }
 
@@ -38,6 +38,15 @@
     align-items:center;
     justify-content:space-between;
     width: 15vw;
+    padding: 20px;
     margin-right: 80px;
 
+}
+.header__right >Button{
+    margin-left: 20px;
+    color: white;
+    font-size: xx-small;
+    background-color:black;
+    padding-left: 30px;
+    padding-right: 30px;
 }

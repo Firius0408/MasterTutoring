@@ -2,6 +2,7 @@ import React from 'react';
 import './Header.css';
 import BusinessLogo from './BusinessLogo.png'
 import SearchIcon from "@material-ui/icons/Search";
+import { Button } from '@material-ui/core'
 import LanguageIcon from "@material-ui/icons/Language";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import {Avatar} from "@material-ui/core";
@@ -16,9 +17,9 @@ function Header() {
            </div>
 
            <div className='header__right'>
-               <p>Login</p>
-               <p>Register</p>
-               <p>Become A Tutor</p>
+               <Button variant='outlined'>Login</Button>
+               <Button variant='outlined'>Register</Button> 
+               <Button variant='outlined'>Tutor</Button>
            </div>
         </div>
     )
