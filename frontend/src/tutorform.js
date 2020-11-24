@@ -67,7 +67,7 @@ import './tutorform.css';
     }
   }
 
-  export default class TextField extends React.Component {
+  class TextField extends React.Component {
 
     static defaultProps = {
       locked: false,
@@ -193,10 +193,5 @@ import './tutorform.css';
       );
     }
   }
-  
-  // ========================================
-  
-  ReactDOM.render(
-    <Page />,
-    document.getElementById('root')
-  );
+
+  export default Page;
