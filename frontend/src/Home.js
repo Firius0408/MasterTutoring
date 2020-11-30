@@ -1,13 +1,13 @@
 import React from 'react';
 import './Home.css';
 import Banner from './Banner';
-import Page from './tutorform';
+import TutorPage from './tutorform';
 
 function Home() {
     return(
         <div className='home'> 
             <Banner />
-            <Page />
+            <TutorPage />
         </div>
     )
 }

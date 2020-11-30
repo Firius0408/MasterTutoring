@@ -137,7 +137,7 @@ class Submit extends React.Component {
   }
 }
 
-class Page extends React.Component {
+class TutorPage extends React.Component {
   renderInstructions() {
     return <Instructions />;
   }
@@ -194,4 +194,4 @@ class Page extends React.Component {
   }
 }
 
-export default Page;
+export default TutorPage;
