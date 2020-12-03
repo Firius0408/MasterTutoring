@@ -1,18 +1,11 @@
 import React, {Component} from 'react'
 import Select from 'react-select'
-
 const options = [
-    { value: 'math', label: 'Math' },
-    { value: 'english', label: 'English' },
-    { value: 'science', label: 'Science' },
-  ];
-
+  { value: 'math', label: 'Math' },
+  { value: 'english', label: 'English' },
+  { value: 'science', label: 'Science' },
+];
   class Search extends Component {
-    options = [
-        { value: 'math', label: 'Math' },
-        { value: 'english', label: 'English' },
-        { value: 'science', label: 'Science' },
-      ];
     state = {
         selectedOption: null,
       };

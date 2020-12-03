@@ -11,10 +11,10 @@ function Header() {
     return(
         <div className='header'>
            <img className="header__icon" src={BusinessLogo} alt=""/>
-           <div className='header__center'>
+           {/* <div className='header__center'>
                <input type="text" />
                <SearchIcon />
-           </div>
+           </div> */}
 
            <div className='header__right'>
                <Button variant='outlined'>Login</Button>
