@@ -16,7 +16,7 @@ class Instructions extends React.Component {
         </p>
         <div>
           <p className="required1">
-            * {" "} 
+            {"\n"} * {" "} 
           </p>
           <p className="required2">
             Required
@@ -67,128 +67,63 @@ class Description extends React.Component {
   }
 }
 
-class TextField extends React.Component {
-
-  static defaultProps = {
-    locked: false,
-    focussed: false,
-    value: '',
-    error: '',
-    label: '',
-    onChange: () => '',
-  };
-
+class Form extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      focussed: (props.locked && props.focussed) || false,
-      value: props.value || '',
-      error: props.error || '',
-      label: props.label || '',
+      firstName:'',
+      lastName:'',
+      email:'',
+      confirmEmail:'',
+      phoneNumber:'',
+      subject:'',
+      driver:'',
+      availability:''
     };
   }
 
-  onChange = event => {
-    const { id } = this.props;
-    const value = event.target.value;
-    this.setState({ value, error: '' });
-    return this.props.onChange(id, value);
+  handleChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
   }
 
-  render() {
-    const { focussed, value, error, label } = this.state;
-    const { id, type, locked } = this.props;
-    const fieldClassName = `field ${(locked ? focussed : focussed || value) && 'focussed'} ${locked && !focussed && 'locked'}`;
-    return (
-      <div className="textfield">
-        <label>
-          <input
-          id={id}
-          type="text"
-          value={value}
-          placeholder={label}
-          onChange={this.onChange}
-          onFocus={() => !locked && this.setState({ focussed: true })}
-          onBlur={() => !locked && this.setState({ focussed: false })}
-          />
-        </label>
+  handleSubmit = (event) => { }
+  
+  render(){
+    return(
+      <div>
+        <form onSubmit>
+          <General text = 'First Name' />
+          <input type = 'firstName' name = 'firstName' onChange={this.handleChange} />
+          <General text = 'Last Name' />
+          <input type = 'lastName' name = 'lastName' onChange={this.handleChange} />
+          <General text = 'Email' />
+          <input type = 'email' name = 'email' onChange={this.handleChange} />
+          <General text = 'Confirm Email' />
+          <input type = 'confirmEmail' name = 'confirmEmail' onChange={this.handleChange} />
+          <General text = 'Phone Number' />
+          <input type='phoneNumber' name ='phoneNumber' onChange={this.handleChange} />
+          <General text = 'What subjects can you tutor for?' />
+          <Description text = 'Ex: Calculus, Biology, Chemistry, U.S. History' />
+          <input type = 'subject' name = 'subject' onChange={this.handleChange} />
+          <General text = 'Are you able to drive to in-person sessions?' />
+          <input type = 'driver' name = 'driver' onChange={this.handleChange} />
+          <General text = 'Availability' />
+          <Description text = 'Ex: Tuesday 2-6 p.m., Weekends 6-8 p.m.' />
+          <input type = 'availability' name = 'availability' onChange={this.handleChange} />
+          <button onSubmit={this.handleSubmit}>Submit</button>
+        </form>
       </div>
-    );
-  }    
-}
-
-class Submit extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {value: null};
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleSubmit(event) {
-    {/* Send all the inputs to the server, where they are saved to an account*/}
-  }
-
-  render() {
-    return (
-      <button className="submit" onSubmit={this.handleSubmit}>
-        Submit
-      </button>
-    );
+    )
   }
 }
 
 class TutorPage extends React.Component {
-  renderInstructions() {
-    return <Instructions />;
-  }
-  renderGeneral(input) {
-    return <General text={input}/>;
-  }
-  renderDescription(input) {
-    return <Description text={input}/>;
-  }
-  renderTextField() {
-    return <TextField label="Your answer"/>;
-  }
-  renderSubmit() {
-    return <Submit />;
-  }
-
   render() {
     return (
       <div>
-        {this.renderInstructions()}
-        {this.renderGeneral("Name")}
-        {this.renderTextField()}
-        <p>{"\n"}</p>
-        {this.renderGeneral("Email Address")}
-        {this.renderTextField()}
-        <p>{"\n"}</p>
-        {this.renderGeneral("Phone Number")}
-        {this.renderTextField()}
-        <p>{"\n"}</p>
-        {this.renderGeneral("Home Address")}
-        {this.renderTextField()}
-        <p>{"\n"}</p>
-        {this.renderGeneral("Field of Work")}
-        {this.renderDescription("If applicable")}
-        {this.renderTextField()}
-        <p>{"\n"}</p>
-        {this.renderGeneral("What subjects can you tutor for?")}
-        {this.renderDescription("Ex: Calculus, Biology, Chemistry, U.S. History")}
-        {this.renderTextField()}
-        <p>{"\n"}</p>
-        {this.renderGeneral("Are you able to drive to in-person sessions?")}
-        {this.renderTextField()}
-        <p>{"\n"}</p>
-        {this.renderGeneral("Availability")}
-        {this.renderDescription("Ex: Tuesday 2-6 p.m., Weekends 6-8 p.m.")}
-        {this.renderTextField()}
-        <p>{"\n"}</p>
-        {this.renderGeneral("Venmo Username")}
-        {this.renderTextField()}
-        <p>{"\n"}</p>
-        {this.renderSubmit()}
+        <Instructions />
+        <Form />
       </div>
     );
   }
