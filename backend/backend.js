@@ -20,8 +20,10 @@ connection.once('open', () => {
 })
 
 const tutorRouter = require('./tutor.routes');
+const userRouter = require('./user.routes');
 
 app.use('/tutor', tutorRouter);
+app.use('/user', userRouter);
 
 app.listen(PORT, () => {
     console.log(`Server Listening on ${PORT}`);
