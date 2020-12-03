@@ -7,7 +7,7 @@ class Login extends React.Component {
         super(props);
         this.state = {
             username:'',
-            pwd:''
+            password:''
         };
     }
 
@@ -28,7 +28,7 @@ class Login extends React.Component {
                     <div>
                         <form onSubmit>
                             <input type='username' name='username' placeholder='username...' requiredonChange={this.handleChange} />
-                            <input type='password' name ='pwd' placeholder='password...' requiredonChange={this.handleChange} />
+                            <input type='password' name ='password' placeholder='password...' requiredonChange={this.handleChange} />
                             <button onSubmit={this.handleSubmit}>Log In</button>
                         </form>
                     </div>
