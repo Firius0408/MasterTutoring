@@ -1,0 +1,41 @@
+/* body {
+    font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+    margin-left: 120px;
+    margin-right: 120px;
+}
+
+.register {
+    color: #163c75;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 1.5;
+
+    display: "flex";
+    justify-Content: "center";
+    align-Items:"center";
+}
+
+.instructions {
+    color: #163c75;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1.5;
+    display: inline;
+} */
+
+label {
+    color: #163c75;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.5;
+    display: inline;
+  }
+
+input {
+    width: 100%;
+  height: 56px;
+  border-radius: 4px;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.05);
+  transition: 0.3s all;
+}

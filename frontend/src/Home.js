@@ -3,6 +3,7 @@ import './Home.css';
 import Banner from './Banner';
 import TutorPage from './tutorform';
 import Login from './login';
+import RegistrationForm from './registerForm';
 
 function Home() {
     return(
@@ -10,6 +11,8 @@ function Home() {
             <Banner />
             <TutorPage />
             <Login />
+            <br></br> 
+            <RegistrationForm />
         </div>
     )
 }
