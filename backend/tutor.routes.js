@@ -37,7 +37,7 @@ router.route('/:id').get((req, res) => {
 
 router.route('/:id').delete((req, res) => {
     Tutor.findByIdAndDelete(req.params.id)
-        .then( () => res.json('Tutor deleted.'))
+        .then(() => res.json('Tutor deleted.'))
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
