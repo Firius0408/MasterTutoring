@@ -8,6 +8,7 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/add').post((req, res) => {
+    const userName = req.body.userName;
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
     const phoneNumber = Number(req.body.phoneNumber);
@@ -15,6 +16,8 @@ router.route('/add').post((req, res) => {
     const password = req.body.password;
 
     const newUser = new User({
+        _id: userName,
+        userName,
         firstName,
         lastName,
         phoneNumber,
@@ -42,6 +45,8 @@ router.route('/:id').delete((req, res) => {
 router.route('/update/:id').post((req, res) => {
     User.findById(req.params.id)
         .then(user => {
+            user._id = req.body.userName;
+            user.userName = req.body.userName;
             user.firstName = req.body.firstName;
             user.lastName = req.body.lastName;
             user.phoneNumber = Number(req.body.phoneNumber);

@@ -51,7 +51,20 @@ class RegistrationForm extends React.Component {
 
     // Takes care of submit
     handleSubmit = (event) => {
-        // Fill in to handle submit 
+        const { email, confirmEmail } = this.state;
+        if (email !== confirmEmail) {
+            alert('Emails do not match');
+            return;
+        }
+        const apiURL = 'http://localhost:4000/user/add';
+        fetch(apiURL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(this.state)
+        })
+        .then(response => response.json())
+        .then(data => console.log('Success:', data))
+        .catch(err => console.error('Error:', err));
         event.preventDefault();
     }
 
