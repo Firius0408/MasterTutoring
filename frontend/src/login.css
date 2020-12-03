@@ -1,0 +1,37 @@
+.div-login{
+    width:300px;
+    height: 400px;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top :10vh;
+}
+
+img{
+    height:50px;
+    width:50px;
+    align-self: center;
+    padding-left: 120px;
+}
+
+input{
+    width:95%;
+    border:1 px solid #dbdbdb;
+    padding: 5px;
+    margin: 2px 0;
+    border-radius: 5px;
+    background-color: #fafafa;
+    box-shadow: none;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;;
+}
+button{
+    widows: 100%;
+    margin: 5px 0;
+    background-color: #163c75;
+    padding: 5px;
+    color: white;
+}
