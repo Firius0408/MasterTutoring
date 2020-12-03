@@ -29,44 +29,35 @@ class RegistrationForm extends React.Component {
             confirmEmail: '',
             password: ''
         };
-
-        this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
-        this.handleLastNameChange = this.handleLastNameChange.bind(this);
-        this.handlePhoneNumberChange = this.handlePhoneNumberChange.bind(this);
-        this.handleEmailChange = this.handleEmailChange.bind(this);
-        this.handleConfirmEmailChange = this.handleConfirmEmailChange.bind(this);
-        this.handlePasswordChange = this.handlePasswordChange.bind(this);
-
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     // Handle Events for each state value: name, email, phone, etc
-    handleFirstNameChange(event){
+    handleFirstNameChange = (event) => {
         this.setState({firstName: event.target.value});
     }
 
-    handleLastNameChange(event){
+    handleLastNameChange = (event) => {
         this.setState({lastName: event.target.value});
     }
 
-    handlePhoneNumberChange(event){
+    handlePhoneNumberChange = (event) => {
         this.setState({phoneNumber: event.target.value});
     }
 
-    handleEmailChange(event){
+    handleEmailChange = (event) => {
         this.setState({email: event.target.value});
     }
 
-    handleConfirmEmailChange(event){
+    handleConfirmEmailChange = (event) => {
         this.setState({confirmEmail: event.target.value})
     }
 
-    handlePasswordChange(event){
+    handlePasswordChange = (event) => {
         this.setState({password: event.target.value});
     }
 
     // Takes care of submit
-    handleSubmit(event){
+    handleSubmit = (event) => {
         // Fill in to handle submit 
         console.log(this.state.firstName);
         console.log(this.state.lastName);
