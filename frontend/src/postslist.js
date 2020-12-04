@@ -37,16 +37,31 @@ class PostList extends React.Component {
             headers: { 'Content-Type': 'application/json'},
         })
         .then(response => response.json())
-        .then(data => {
-            console.log('Success', data);
-            this.setState( {posts: data });
-        })
+        .then(data => this.setState( {posts: data }))
         .catch(err => console.error('Error', err));
     }
 
     //TODO FINISH THESE FUNCTIONS, increment the number of Likes and Dislikes 
-    handleLike = (event) => { }
-    handleDislike = (event) => { }
+    handleLike = (event) => { 
+        const id = event.target.id;
+        const apiURL = "http://localhost:4000/tutor/like/" + id;
+        fetch(apiURL, {
+            method: 'POST',
+        })
+        .then(response => response.json())
+        .then(data => console.log('Success:', data))
+        .catch(err => console.error('Error:', err));
+    }
+    handleDislike = (event) => { 
+        const id = event.target.id;
+        const apiURL = "http://localhost:4000/tutor/dislike/" + id;
+        fetch(apiURL, {
+            method: 'POST',
+        })
+        .then(response => response.json())
+        .then(data => console.log('Success:', data))
+        .catch(err => console.error('Error:', err));
+    }
 
     //TODO: Need to  STYLE
     render(){
@@ -70,8 +85,8 @@ class PostList extends React.Component {
                                     <div className='feedback'>
                                         <p>Likes: {postDetail.likes}</p>
                                         <p>Dislikes: {postDetail.dislikes}</p>
-                                        <button onSubmit={this.handleLike}>Like</button>
-                                        <button onSubmit={this.handleDislike}>Dislike</button>
+                                        <button onClick={this.handleLike} id={postDetail._id}>Like</button>
+                                        <button onClick={this.handleDislike} id={postDetail._id}>Dislike</button>
                                     </div>
                                     <br></br>
                                     <br></br>
