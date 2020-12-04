@@ -8,7 +8,7 @@ Mastered Tutors is a website to for students to find Tutors or become tutors.
 
 - [Table of Contents](#table-of-contents)
 - [Overview](#overview)
-  - [Purpose](#purpose):Wq
+  - [Purpose](#purpose)
   - [Technologies and Architecture](#technologies-and-architecture)
     - [Frontend](#frontend)
       - [Tech Stack](#tech-stack)
