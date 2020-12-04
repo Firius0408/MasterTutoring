@@ -16,6 +16,7 @@ router.route('/add').post((req, res) => {
     const canDrive = Boolean(req.body.canDrive);
     const availability = req.body.availability;
     const likes = 0;
+    const dislikes = 0;
 
     const newTutor = new Tutor({
         firstName,
@@ -26,6 +27,7 @@ router.route('/add').post((req, res) => {
         canDrive,
         availability,
         likes,
+        dislikes,
     });
 
     newTutor.save()
@@ -78,7 +80,7 @@ router.route('/like/:id').post((req, res) => {
 router.route('/dislike/:id').post((req, res) => {
     Tutor.findById(req.params.id)
         .then(tutor => {
-            tutor.likes--;
+            tutor.dislikes++;
 
             tutor.save()
                 .then(() => res.json('Tutor LIked!'))
