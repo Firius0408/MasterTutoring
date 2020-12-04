@@ -6,15 +6,14 @@ Mastered Tutors is a website to for students to find Tutors or become tutors.
 
 # Table of Contents
 
-- [eXchange](#exchange)
 - [Table of Contents](#table-of-contents)
 - [Overview](#overview)
-  - [Purpose](#purpose)
+  - [Purpose](#purpose):Wq
   - [Technologies and Architecture](#technologies-and-architecture)
     - [Frontend](#frontend)
       - [Tech Stack](#tech-stack)
       - [Architecture (Components)](#architecture-components)
-    - [Backend](#backend)
+    - [Backend](#back;end)
       - [Tech Stack](#tech-stack-1)
       - [Architecture (APIs)](#architecture-apis)
 - [Features](#features)
