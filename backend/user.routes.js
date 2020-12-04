@@ -1,4 +1,7 @@
 const router = require('express').Router();
+const bcrypt = require('bcrypt');
+
+const saltRounds = 10;
 let User = require('./user.model');
 
 router.route('/').get((req, res) => {
@@ -13,21 +16,25 @@ router.route('/add').post((req, res) => {
     const lastName = req.body.lastName;
     const phoneNumber = Number(req.body.phoneNumber);
     const email = req.body.email;
-    const password = req.body.password;
 
-    const newUser = new User({
-        _id: userName,
-        userName,
-        firstName,
-        lastName,
-        phoneNumber,
-        email,
-        password,
-    });
-
-    newUser.save()
-        .then(() => res.json('User Added!'))
+    bcrypt.hash(req.body.password, saltRounds)
+        .then(hash => {
+            const newUser = new User({
+                _id: userName,
+                userName,
+                firstName,
+                lastName,
+                phoneNumber,
+                email,
+                password: hash,
+            });
+        
+            newUser.save()
+                .then(() => res.json('User Added!'))
+                .catch(err => res.status(400).json('Error: ' + err));
+        })
         .catch(err => res.status(400).json('Error: ' + err));
+    
 });
 
 router.route('/:id').get((req, res) => {
