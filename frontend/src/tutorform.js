@@ -75,9 +75,9 @@ class Form extends React.Component {
       lastName:'',
       email:'',
       confirmEmail:'',
-      phoneNumber:'',
-      subject:'',
-      driver:'',
+      phone:'',
+      subjects:'',
+      canDrive: false,
       availability:''
     };
   }
@@ -87,12 +87,28 @@ class Form extends React.Component {
     this.setState({ [name]: value });
   }
 
-  handleSubmit = (event) => { }
+  handleSubmit = (event) => {
+    const { email, confirmEmail } = this.state;
+    if (email !== confirmEmail) {
+        alert('Emails do not match');
+        return;
+    }
+    const apiURL = "http://localhost:4000/tutor/add";
+    fetch(apiURL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(this.state)
+    })
+    .then(response => response.json())
+    .then(data => console.log('Success:', data))
+    .catch(err => console.error('Error:', err));
+    event.preventDefault();
+   }
   
   render(){
     return(
       <div>
-        <form onSubmit>
+        <form onSubmit={this.handleSubmit}>
           <General text = 'First Name' />
           <input type = 'text' name = 'firstName' onChange={this.handleChange} />
           <General text = 'Last Name' />
@@ -102,16 +118,16 @@ class Form extends React.Component {
           <General text = 'Confirm Email' />
           <input type = 'email' name = 'confirmEmail' onChange={this.handleChange} />
           <General text = 'Phone Number' />
-          <input type='text' name ='phoneNumber' onChange={this.handleChange} />
+          <input type='text' name ='phone' onChange={this.handleChange} />
           <General text = 'What subjects can you tutor for?' />
           <Description text = 'Ex: Calculus, Biology, Chemistry, U.S. History' />
-          <input type = 'text' name = 'subject' onChange={this.handleChange} />
+          <input type = 'text' name = 'subjects' onChange={this.handleChange} />
           <General text = 'Are you able to drive to in-person sessions?' />
-          <input type = 'text' name = 'driver' onChange={this.handleChange} />
+          <input type = 'text' name = 'canDrive' onChange={this.handleChange} />
           <General text = 'Availability' />
           <Description text = 'Ex: Tuesday 2-6 p.m., Weekends 6-8 p.m.' />
           <input type = 'text' name = 'availability' onChange={this.handleChange} />
-          <button onSubmit={this.handleSubmit}>Submit</button>
+          <input type = 'submit' value='Submit' />
         </form>
       </div>
     )

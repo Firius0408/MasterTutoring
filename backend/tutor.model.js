@@ -11,6 +11,7 @@ const tutorScheme = new Schema({
     canDrive: Boolean,
     availability: String,
     likes: Number,
+    dislikes: Number,
 }, {
     timestamps: true,
 });
