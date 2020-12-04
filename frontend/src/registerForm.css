@@ -20,8 +20,9 @@ label {
     font-size: 18px;
     display: inline;
     line-height: 1.5;
-  }
+}
 
+/* Styling for inputs */
 input {
     width: 100%;
     height: 56px;
@@ -29,12 +30,40 @@ input {
     border: none;
     background-color: rgba(0, 0, 0, 0.05);
     transition: 0.3s all;
-    
 }
 
-/* input[placeholder] {
-    color: red;
-} */
+input:hover {
+    background-color: white;
+    border: 2px solid #163c75;
+    border-radius: 4px;
+    width: 100%;
+    height: 56px;
+}
+
+input[type=text] {
+    color: #163c75;
+    font-size: 16px;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+}
+
+input[type=email] {
+    color: #163c75;
+    font-size: 16px;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+}
+
+input[type=username] {
+    color: #163c75;
+    font-size: 16px;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+}
+
+input[type=password] {
+    color: #163c75;
+    font-size: 16px;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+}
+
 
 /* Styling for submit button */
 input[type=submit] {
@@ -57,6 +86,10 @@ input[type=submit]:hover{
     font-weight: bold;
     font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
     padding: 16px 24px;
+}
+
+button {
+    text-align: center;
 }
 
 

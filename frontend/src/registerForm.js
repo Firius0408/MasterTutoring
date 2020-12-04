@@ -79,7 +79,6 @@ class RegistrationForm extends React.Component {
                 <label>
                     First Name
                     <input type="text" 
-                    placeholder='Your Answer' 
                     value={this.state.firstName} 
                     onChange={this.handleFirstNameChange} />
                 </label>
@@ -87,7 +86,6 @@ class RegistrationForm extends React.Component {
                 <label>
                     Last Name
                     <input type="text" 
-                    placeholder='Your Answer' 
                     value={this.state.lastName} 
                     onChange={this.handleLastNameChange} />
                 </label>
@@ -95,7 +93,6 @@ class RegistrationForm extends React.Component {
                 <label>
                     Phone Number
                     <input type="text" 
-                    placeholder='Your Answer' 
                     value={this.state.phoneNumber} 
                     onChange={this.handlePhoneNumberChange} />
                 </label>
@@ -103,7 +100,6 @@ class RegistrationForm extends React.Component {
                 <label>
                     Email
                     <input type="email" 
-                    placeholder='Your Answer' 
                     value={this.state.email} 
                     onChange={this.handleEmailChange} />
                 </label>
@@ -111,7 +107,6 @@ class RegistrationForm extends React.Component {
                 <label>
                     Confirm Email
                     <input type="email" 
-                    placeholder='Your Answer' 
                     value={this.state.confirmEmail} 
                     onChange={this.handleConfirmEmailChange} />
                 </label>
@@ -119,7 +114,6 @@ class RegistrationForm extends React.Component {
                 <label>
                     Username
                     <input type="username" 
-                    placeholder='Your Answer' 
                     value={this.state.userName} 
                     onChange={this.handleUserNameChange} />
                 </label>
@@ -127,12 +121,12 @@ class RegistrationForm extends React.Component {
                 <label>
                     Password
                     <input type="password" 
-                    placeholder='Your Answer' 
                     value={this.state.password} 
                     onChange={this.handlePasswordChange} />
                 </label>
 
-                <input type="submit" value="Register" />
+                <button>Create an Account</button>
+                {/* <input type="submit" value="Register" /> */}
             </form>
         )
     }
