@@ -44,20 +44,20 @@ router.route('/:id').delete((req, res) => {
 router.route('/update/:id').post((req, res) => {
     Tutor.findById(req.params.id)
         .then(tutor => {
-        tutor.name = req.body.name;
-        tutor.email = req.body.email;
-        tutor.phone = Number(req.body.phone);
-        tutor.address = req.body.address;
-        tutor.field = req.body.field;
-        tutor.subjects = req.body.subjects;
-        tutor.canDrive = Boolean(req.body.canDrive);
-        tutor.availability = req.body.availability;
-        tutor.venmo = req.body.venmo;
+            tutor.name = req.body.name;
+            tutor.email = req.body.email;
+            tutor.phone = Number(req.body.phone);
+            tutor.address = req.body.address;
+            tutor.field = req.body.field;
+            tutor.subjects = req.body.subjects;
+            tutor.canDrive = Boolean(req.body.canDrive);
+            tutor.availability = req.body.availability;
+            tutor.venmo = req.body.venmo;
 
-        tutor.save()
-            .then(() => res.json('Tutor Updated!'))
-            .catch(err => res.status(400).json('Error: ' + err));
-        })
+            tutor.save()
+                .then(() => res.json('Tutor Updated!'))
+                .catch(err => res.status(400).json('Error: ' + err));
+            })
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
