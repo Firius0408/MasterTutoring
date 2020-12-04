@@ -80,7 +80,7 @@ class PostList extends React.Component {
                                     </div>
                                     <div className='generalInfo'>
                                         <p>Subjects: {postDetail.subjects}</p>
-                                        <p>In Person: {postDetail.canDrive}</p>
+                                        <p>In Person: {postDetail.canDrive ? "Yes": "No"}</p>
                                     </div>
                                     <div className='feedback'>
                                         <p>Likes: {postDetail.likes}</p>
