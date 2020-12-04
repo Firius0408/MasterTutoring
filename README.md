@@ -2,7 +2,7 @@
 
 <!-- [Visit the website] our websit link here  -->
 
-Mastered Tutors is a website to for students to find Tutors or become tutors. 
+Mastered Tutors is a website for students to find Tutors or become tutors. 
 
 # Table of Contents
 
