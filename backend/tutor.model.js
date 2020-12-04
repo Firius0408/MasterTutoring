@@ -9,6 +9,7 @@ const tutorScheme = new Schema({
     subjects: String,
     canDrive: Boolean,
     availability: String,
+    likes: Number,
 }, {
     timestamps: true,
 });

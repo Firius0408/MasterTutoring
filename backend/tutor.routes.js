@@ -14,6 +14,7 @@ router.route('/add').post((req, res) => {
     const subjects = req.body.subjects;
     const canDrive = Boolean(req.body.canDrive);
     const availability = req.body.availability;
+    const likes = 0;
 
     const newTutor = new Tutor({
         name,
@@ -22,6 +23,7 @@ router.route('/add').post((req, res) => {
         subjects,
         canDrive,
         availability,
+        likes,
     });
 
     newTutor.save()
@@ -55,6 +57,30 @@ router.route('/update/:id').post((req, res) => {
                 .then(() => res.json('Tutor Updated!'))
                 .catch(err => res.status(400).json('Error: ' + err));
             })
+        .catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/like/:id').post((req, res) => {
+    Tutor.findById(req.params.id)
+        .then(tutor => {
+            tutor.likes++;
+
+            tutor.save()
+                .then(() => res.json('Tutor LIked!'))
+                .catch(err => res.status(400).json('Error: ' + err));
+        })
+        .catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/dislike/:id').post((req, res) => {
+    Tutor.findById(req.params.id)
+        .then(tutor => {
+            tutor.likes--;
+
+            tutor.save()
+                .then(() => res.json('Tutor LIked!'))
+                .catch(err => res.status(400).json('Error: ' + err));
+        })
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
