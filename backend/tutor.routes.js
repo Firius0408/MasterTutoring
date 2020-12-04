@@ -47,12 +47,9 @@ router.route('/update/:id').post((req, res) => {
             tutor.name = req.body.name;
             tutor.email = req.body.email;
             tutor.phone = Number(req.body.phone);
-            tutor.address = req.body.address;
-            tutor.field = req.body.field;
             tutor.subjects = req.body.subjects;
             tutor.canDrive = Boolean(req.body.canDrive);
             tutor.availability = req.body.availability;
-            tutor.venmo = req.body.venmo;
 
             tutor.save()
                 .then(() => res.json('Tutor Updated!'))
