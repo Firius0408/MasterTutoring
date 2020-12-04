@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const tutorScheme = new Schema({
-    name: String,
+    firstName: String,
+    lastName: String,
     email: String,
     phone: Number,
     subjects: String,

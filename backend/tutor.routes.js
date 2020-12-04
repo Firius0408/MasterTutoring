@@ -8,7 +8,8 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/add').post((req, res) => {
-    const name = req.body.name;
+    const firstName = req.body.firstName;
+    const lastName = req.body.lastName;
     const email = req.body.email;
     const phone = Number(req.body.phone);
     const subjects = req.body.subjects;
@@ -17,7 +18,8 @@ router.route('/add').post((req, res) => {
     const likes = 0;
 
     const newTutor = new Tutor({
-        name,
+        firstName,
+        lastName,
         email,
         phone,
         subjects,
@@ -46,7 +48,8 @@ router.route('/:id').delete((req, res) => {
 router.route('/update/:id').post((req, res) => {
     Tutor.findById(req.params.id)
         .then(tutor => {
-            tutor.name = req.body.name;
+            tutor.firstName = req.body.firstName;
+            tutor.lastName = req.body.lastName;
             tutor.email = req.body.email;
             tutor.phone = Number(req.body.phone);
             tutor.subjects = req.body.subjects;
