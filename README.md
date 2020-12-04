@@ -37,7 +37,7 @@ a tutor at a convenient time for them.
 #### Tech Stack
 
 1. React
-2. Bootstrap CSS for styling
+2. CSS for styling
 
 #### Architecture (Components)
 
