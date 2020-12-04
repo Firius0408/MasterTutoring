@@ -94,23 +94,23 @@ class Form extends React.Component {
       <div>
         <form onSubmit>
           <General text = 'First Name' />
-          <input type = 'firstName' name = 'firstName' onChange={this.handleChange} />
+          <input type = 'text' name = 'firstName' onChange={this.handleChange} />
           <General text = 'Last Name' />
-          <input type = 'lastName' name = 'lastName' onChange={this.handleChange} />
+          <input type = 'text' name = 'lastName' onChange={this.handleChange} />
           <General text = 'Email' />
           <input type = 'email' name = 'email' onChange={this.handleChange} />
           <General text = 'Confirm Email' />
-          <input type = 'confirmEmail' name = 'confirmEmail' onChange={this.handleChange} />
+          <input type = 'email' name = 'confirmEmail' onChange={this.handleChange} />
           <General text = 'Phone Number' />
-          <input type='phoneNumber' name ='phoneNumber' onChange={this.handleChange} />
+          <input type='text' name ='phoneNumber' onChange={this.handleChange} />
           <General text = 'What subjects can you tutor for?' />
           <Description text = 'Ex: Calculus, Biology, Chemistry, U.S. History' />
-          <input type = 'subject' name = 'subject' onChange={this.handleChange} />
+          <input type = 'text' name = 'subject' onChange={this.handleChange} />
           <General text = 'Are you able to drive to in-person sessions?' />
-          <input type = 'driver' name = 'driver' onChange={this.handleChange} />
+          <input type = 'text' name = 'driver' onChange={this.handleChange} />
           <General text = 'Availability' />
           <Description text = 'Ex: Tuesday 2-6 p.m., Weekends 6-8 p.m.' />
-          <input type = 'availability' name = 'availability' onChange={this.handleChange} />
+          <input type = 'text' name = 'availability' onChange={this.handleChange} />
           <button onSubmit={this.handleSubmit}>Submit</button>
         </form>
       </div>
