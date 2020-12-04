@@ -72,42 +72,67 @@ class RegistrationForm extends React.Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
+                <div className = 'div-instructions'>
+                    Create an Account
+                </div>
+
                 <label>
-                        First Name
-                        <input type="text" placeholder='Your Answer' value={this.state.firstName} onChange={this.handleFirstNameChange} />
+                    First Name
+                    <input type="text" 
+                    placeholder='Your Answer' 
+                    value={this.state.firstName} 
+                    onChange={this.handleFirstNameChange} />
                 </label>
 
                 <label>
                     Last Name
-                    <input type="text" placeholder='Your Answer' value={this.state.lastName} onChange={this.handleLastNameChange} />
+                    <input type="text" 
+                    placeholder='Your Answer' 
+                    value={this.state.lastName} 
+                    onChange={this.handleLastNameChange} />
                 </label>
 
                 <label>
                     Phone Number
-                    <input type="text" placeholder='Your Answer' value={this.state.phoneNumber} onChange={this.handlePhoneNumberChange} />
+                    <input type="text" 
+                    placeholder='Your Answer' 
+                    value={this.state.phoneNumber} 
+                    onChange={this.handlePhoneNumberChange} />
                 </label>
 
                 <label>
                     Email
-                    <input type="email" placeholder='Your Answer' value={this.state.email} onChange={this.handleEmailChange} />
+                    <input type="email" 
+                    placeholder='Your Answer' 
+                    value={this.state.email} 
+                    onChange={this.handleEmailChange} />
                 </label>
                 
                 <label>
                     Confirm Email
-                    <input type="email" placeholder='Your Answer' value={this.state.confirmEmail} onChange={this.handleConfirmEmailChange} />
+                    <input type="email" 
+                    placeholder='Your Answer' 
+                    value={this.state.confirmEmail} 
+                    onChange={this.handleConfirmEmailChange} />
                 </label>
 
                 <label>
                     Username
-                    <input type="username" placeholder='Your Answer' value={this.state.userName} onChange={this.handleUserNameChange} />
+                    <input type="username" 
+                    placeholder='Your Answer' 
+                    value={this.state.userName} 
+                    onChange={this.handleUserNameChange} />
                 </label>
 
                 <label>
                     Password
-                    <input type="password" placeholder='Your Answer' value={this.state.password} onChange={this.handlePasswordChange} />
+                    <input type="password" 
+                    placeholder='Your Answer' 
+                    value={this.state.password} 
+                    onChange={this.handlePasswordChange} />
                 </label>
 
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Register" />
             </form>
         )
     }

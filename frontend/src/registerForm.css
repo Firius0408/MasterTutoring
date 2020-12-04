@@ -1,41 +1,62 @@
-/* body {
+body {
     font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
     margin-left: 120px;
     margin-right: 120px;
 }
 
-.register {
+.div-instructions {
+    text-align: center;
     color: #163c75;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 26px;
     line-height: 1.5;
-
-    display: "flex";
-    justify-Content: "center";
-    align-Items:"center";
+    border-bottom: 2px groove #b5b4b1;
+    padding-bottom: 10px;
 }
-
-.instructions {
-    color: #163c75;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 1.5;
-    display: inline;
-} */
 
 label {
     color: #163c75;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 1.5;
+    font-weight: bold;
+    font-size: 18px;
     display: inline;
+    line-height: 1.5;
   }
 
 input {
     width: 100%;
-  height: 56px;
-  border-radius: 4px;
-  position: relative;
-  background-color: rgba(0, 0, 0, 0.05);
-  transition: 0.3s all;
+    height: 56px;
+    position: relative;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.05);
+    transition: 0.3s all;
+    
 }
+
+/* input[placeholder] {
+    color: red;
+} */
+
+/* Styling for submit button */
+input[type=submit] {
+    background-color: #163c75;
+    color: white;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+    padding: 16px 24px;
+    transition-duration: 0.3s;
+}
+
+input[type=submit]:hover{
+    background-color: white;
+    color: #163c75;
+    border: 2px solid #163c75;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+    padding: 16px 24px;
+}
+
+
