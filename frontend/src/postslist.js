@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react';
 
 
 //MAY USE THIS
@@ -23,37 +23,27 @@ class General extends React.Component {
     }
   }
 
-class PostList extends Component{
+class PostList extends React.Component {
     constructor(props){
         super(props);
-        // TO DO: FIND A WAY TO POPULATE THIS LIST FROM THE BACKEND. SAMPLE DATA IS HERE
-        this.posts =
-        [
-            {
-                "FirstName": "Lance",
-                "LastName":"Ding",
-                "Email":"lanceding2001@gmail.com",
-                "Phone":"949-355-1311",
-                "Subjects": "Math",
-                "Drive": true,
-                "Availability":"All day Everyday",
-                "Likes": 2,
-                "Dislikes":0
-            },
-            {
-                "FirstName": "Donald",
-                "LastName":"Trump",
-                "Email":"itsHUGE@gmail.com",
-                "Confirm Email":"itsHuge@gmail.com",
-                "Phone":"949-355-1311",
-                "Subjects": "History",
-                "Drive": false,
-                "Availability":"Thursdays 3-5pm",
-                "Likes": 0,
-                "Dislikes":1
-            }
-        ]
+        this.state = { posts: []}
     }
+
+    componentDidMount() {
+        const apiURL = "http://localhost:4000/tutor/";
+
+        fetch(apiURL, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json'},
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success', data);
+            this.setState( {posts: data });
+        })
+        .catch(err => console.error('Error', err));
+    }
+
     //TODO FINISH THESE FUNCTIONS, increment the number of Likes and Dislikes 
     handleLike = (event) => { }
     handleDislike = (event) => { }
@@ -65,21 +55,21 @@ class PostList extends Component{
                 <h1> Tutors</h1>
                 <br></br>
                 <br></br>
-                    {this.posts.map((postDetail)=>{
+                    {this.state.posts.map((postDetail)=>{
                         return <div className='tutorPost'>
                                     <div className='tutorName'>
-                                        <h2>{postDetail.FirstName} {postDetail.LastName}</h2>
+                                        <h2>{postDetail.firstName} {postDetail.lastName}</h2>
                                     </div>
                                     <div className='contactInfo'>
-                                        <p>Phone: {postDetail.Phone} Email: {postDetail.Email}</p>
+                                        <p>Phone: {postDetail.phone} Email: {postDetail.email}</p>
                                     </div>
                                     <div className='generalInfo'>
-                                        <p>Subjects: {postDetail.Subjects}</p>
-                                        <p>In Person: {postDetail.Drive}</p>
+                                        <p>Subjects: {postDetail.subjects}</p>
+                                        <p>In Person: {postDetail.canDrive}</p>
                                     </div>
                                     <div className='feedback'>
-                                        <p>Likes: {postDetail.Likes}</p>
-                                        <p>Dislikes: {postDetail.Dislikes}</p>
+                                        <p>Likes: {postDetail.likes}</p>
+                                        <p>Dislikes: {postDetail.dislikes}</p>
                                         <button onSubmit={this.handleLike}>Like</button>
                                         <button onSubmit={this.handleDislike}>Dislike</button>
                                     </div>
@@ -92,4 +82,4 @@ class PostList extends Component{
     } 
 }
 
-export default PostList
+export default PostList;
