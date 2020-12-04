@@ -2,10 +2,11 @@
 
 <!-- [Visit the website] our websit link here  -->
 
-Mastered Tutors is a website for students to find tutors or become tutors. 
+Mastered Tutors is a website to for students to find Tutors or become tutors. 
 
 # Table of Contents
 
+- [eXchange](#exchange)
 - [Table of Contents](#table-of-contents)
 - [Overview](#overview)
   - [Purpose](#purpose)
@@ -13,7 +14,7 @@ Mastered Tutors is a website for students to find tutors or become tutors.
     - [Frontend](#frontend)
       - [Tech Stack](#tech-stack)
       - [Architecture (Components)](#architecture-components)
-    - [Backend](#back;end)
+    - [Backend](#backend)
       - [Tech Stack](#tech-stack-1)
       - [Architecture (APIs)](#architecture-apis)
 - [Features](#features)
@@ -37,12 +38,12 @@ a tutor at a convenient time for them.
 #### Tech Stack
 
 1. React
-2. CSS for styling
+2. Bootstrap CSS for styling
 
 #### Architecture (Components)
 
-   Banner, Header, Home, Login, Register, 
-   Postlist, tutorform
+1. Banner, Header, Home, Login, Register, 
+   Postlist,tutorform, register
 
 ### Backend
 
