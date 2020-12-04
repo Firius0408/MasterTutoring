@@ -2,7 +2,7 @@
 
 <!-- [Visit the website] our websit link here  -->
 
-Mastered Tutors is a website for students to find Tutors or become tutors. 
+Mastered Tutors is a website for students to find tutors or become tutors. 
 
 # Table of Contents
 
@@ -41,8 +41,8 @@ a tutor at a convenient time for them.
 
 #### Architecture (Components)
 
-1. Banner, Header, Home, Login, Register, 
-   Postlist,tutorform, register
+   Banner, Header, Home, Login, Register, 
+   Postlist, tutorform
 
 ### Backend
 
