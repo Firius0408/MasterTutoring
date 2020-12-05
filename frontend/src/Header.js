@@ -18,9 +18,15 @@ function Header() {
            </div> */}
 
             <div className='header__right'>
-                <Link variant='outlined' to="/Login">Login</Link>
-                <Link variant='outlined' to="/RegistrationForm">Register</Link> 
-                <Link variant='outlined' to="Tutor">Tutor</Link>
+                <Link to="/Login">
+                    <Button varient='outlined'>Login</Button>
+                </Link>
+                <Link to="/RegistrationForm">
+                    <Button varient='outlined'>Register</Button>    
+                </Link> 
+                <Link to="Tutor">
+                    <Button varient='outlined'>Tutor</Button>
+                </Link>
             </div>
         </div>
     )
