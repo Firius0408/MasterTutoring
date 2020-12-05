@@ -22,6 +22,20 @@ label {
     line-height: 1.5;
 }
 
+label:before{
+    content: "* ";
+    color: red;
+    display: inline;
+}
+
+.div-phone-example{
+    color: #163c75;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.5;
+    display: inline;
+}
+
 /* Styling for inputs */
 input {
     width: 100%;
@@ -75,6 +89,10 @@ input[type=submit] {
     font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
     padding: 16px 24px;
     transition-duration: 0.3s;
+    width: 600px;
+    margin: 20px auto;
+    justify-content: center;
+    display: flex;
 }
 
 input[type=submit]:hover{
