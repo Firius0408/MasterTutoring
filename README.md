@@ -82,5 +82,5 @@ $ npm install
 ```
 5. Launch backend
 ```
-$ node backend.js
+$ npm start
 ```
