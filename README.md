@@ -27,7 +27,7 @@ Mastered Tutors is a website for students to find tutors or become tutors.
 
 Mastered Tutors offers cheap, convenient, and effective educational help by providing a platform to 
 connect students with others like them. Those looking to tutor can signup through Mastered Tutors through 
-a pain-free registration and receive consistent opportunities to tutor.Those looking for tutoring can find
+a pain-free registration and receive consistent opportunities to tutor. Those looking for tutoring can find
 a tutor at a convenient time for them.
 
 ## Technologies and Architecture
