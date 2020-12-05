@@ -24,7 +24,7 @@ function Header() {
                 <Link to="/RegistrationForm">
                     <Button varient='outlined'>Register</Button>    
                 </Link> 
-                <Link to="Tutor">
+                <Link to="/Tutor">
                     <Button varient='outlined'>Tutor</Button>
                 </Link>
             </div>
