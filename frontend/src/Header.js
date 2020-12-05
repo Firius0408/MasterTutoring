@@ -6,13 +6,7 @@ import { Button } from '@material-ui/core'
 import LanguageIcon from "@material-ui/icons/Language";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import {Avatar} from "@material-ui/core";
-import {
-    BrowserRouter as Router, 
-    Switch,
-    Route,
-    Link
-} from 'react-router-dom';
-import Login from './login';
+import { Link } from 'react-router-dom';
 
 function Header() {
     return(
