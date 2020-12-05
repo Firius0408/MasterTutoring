@@ -10,9 +10,9 @@ class Instructions extends React.Component {
           Become a Tutor
         </h1>
         <p className="introduction">
-          Fill out the form below to finalize your account as a Tutor. If a Student matches with you,
+          Fill out the form below to finalize your account as a Tutor. If a student matches with you,
           your account will receive a notification and you will have an opportunity to set up a
-          tutoring session. All tutors must be at least 18 years old and have a Venmo.
+          tutoring session. 
         </p>
         <div>
           <p className="required1">
