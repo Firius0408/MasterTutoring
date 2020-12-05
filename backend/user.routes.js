@@ -67,4 +67,22 @@ router.route('/update/:id').post((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/login').post((req, res) => {
+    User.findById(req.body.userName)
+        .then(user => {
+            bcrypt.compare(req.body.password, user.password)
+                .then(result => {
+                    if (result) {
+                        bcrypt.hash("idk", saltRounds)
+                            .then(hash => res.cookie('loginAuth', hash).json('Success'));
+                    }
+                    else {
+                        res.status(400).json('Unable to authenticate');
+                    }
+                })
+                .catch(err => res.status(400).json('Error: ' + err));
+        })
+        .catch(err => res.status(400).json('Error: ' + err));
+});
+
 module.exports = router;

@@ -3,10 +3,15 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const cookieParser = require('cookie-parser');
 const PORT = 4000;
 
-app.use(cors());
+app.use(cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+}));
 app.use(express.json());
+app.use(cookieParser());
 
 const uri = 'mongodb://127.0.0.1:27017/mastertutoring';
 

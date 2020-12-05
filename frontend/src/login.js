@@ -6,7 +6,7 @@ class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            username:'',
+            userName:'',
             password:''
         };
     }
@@ -17,8 +17,19 @@ class Login extends React.Component {
     }
     
     handleSubmit = (e) => {
-
+        const apiURL = "http://localhost:4000/user/login";
+        fetch(apiURL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include',
+            body: JSON.stringify(this.state)
+        })
+        .then(response => response.json())
+        .then(data => console.log('Success:', data))
+        .catch(err => console.error('Error:', err));
+        e.preventDefault();
     }
+
     render(){
         return(
             <div>
@@ -27,10 +38,10 @@ class Login extends React.Component {
                         <img src={BusinessLogo} alt=""/> 
                      </div>
                     <div>
-                        <form onSubmit>
-                            <input type='username' name='username' placeholder='username...' requiredonChange={this.handleChange} />
-                            <input type='password' name ='password' placeholder='password...' requiredonChange={this.handleChange} />
-                            <button onSubmit={this.handleSubmit}>Log In</button>
+                        <form onSubmit={this.handleSubmit}>
+                            <input type='username' name='userName' placeholder='username...' onChange={this.handleChange} />
+                            <input type='password' name ='password' placeholder='password...' onChange={this.handleChange} />
+                            <button>Log In</button>
                         </form>
                     </div>
                 </div>
