@@ -76,8 +76,9 @@ class RegistrationForm extends React.Component {
                     Create an Account
                 </div>
 
+                <div className = 'div-required'>Required Fields</div>
                 <br></br>
-
+                
                 <label>
                     First Name
                     <input type="text" value={this.state.firstName} onChange={this.handleFirstNameChange} />
@@ -116,7 +117,7 @@ class RegistrationForm extends React.Component {
 
                 <br></br><br></br>
                 
-                <input type="submit" value="Register" />
+                <input type="submit" value="Sign-Up" />
             </form>
         )
     }

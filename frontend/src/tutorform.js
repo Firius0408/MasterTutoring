@@ -14,12 +14,14 @@ class Instructions extends React.Component {
           your account will receive a notification and you will have an opportunity to set up a
           tutoring session. All tutors must be at least 18 years old and have a Venmo.
         </p>
+        
         <div>
+        <br></br>
           <p className="required1">
             {"\n"} * {" "} 
           </p>
           <p className="required2">
-            Required
+            Required Fields
           </p>
           <p>
             {"\n"}
@@ -39,12 +41,13 @@ class General extends React.Component {
   render() {
     return (
       <div>
-        <p className="general1">
-          {this.props.text} {" "} 
-        </p>
         <p className="general2">
            * {""}
         </p>
+        <p className="general1">
+          {this.props.text} {" "} 
+        </p>
+        
       </div>
     );
   }
