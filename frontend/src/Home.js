@@ -12,6 +12,9 @@ function Home() {
         <div className='home'> 
             <Banner />
             <Switch>
+                <Route exact path="/">
+
+                </Route>
                 <Route path="/Login">
                     <Login />
                 </Route>

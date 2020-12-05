@@ -11,7 +11,9 @@ import { Link } from 'react-router-dom';
 function Header() {
     return(
         <div className='header'>
-           <img className="header__icon" src={BusinessLogo} alt=""/>
+            <Link to="/">
+                <img className="header__icon" src={BusinessLogo} alt=""/>
+            </Link>
            {/* <div className='header__center'>
                <input type="text" />
                <SearchIcon />
