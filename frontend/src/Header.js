@@ -6,6 +6,13 @@ import { Button } from '@material-ui/core'
 import LanguageIcon from "@material-ui/icons/Language";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import {Avatar} from "@material-ui/core";
+import {
+    BrowserRouter as Router, 
+    Switch,
+    Route,
+    Link
+} from 'react-router-dom';
+import Login from './login';
 
 function Header() {
     return(
@@ -16,11 +23,11 @@ function Header() {
                <SearchIcon />
            </div> */}
 
-           <div className='header__right'>
-               <Button variant='outlined'>Login</Button>
-               <Button variant='outlined'>Register</Button> 
-               <Button variant='outlined'>Tutor</Button>
-           </div>
+            <div className='header__right'>
+                <Link variant='outlined' to="/Login">Login</Link>
+                <Link variant='outlined' to="/RegistrationForm">Register</Link> 
+                <Link variant='outlined' to="Tutor">Tutor</Link>
+            </div>
         </div>
     )
 }
