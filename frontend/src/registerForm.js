@@ -76,57 +76,48 @@ class RegistrationForm extends React.Component {
                     Create an Account
                 </div>
 
+                <div className = 'div-required'>Required Fields</div>
+                <br></br>
+                
                 <label>
                     First Name
-                    <input type="text" 
-                    value={this.state.firstName} 
-                    onChange={this.handleFirstNameChange} />
+                    <input type="text" value={this.state.firstName} onChange={this.handleFirstNameChange} />
                 </label>
 
                 <label>
                     Last Name
-                    <input type="text" 
-                    value={this.state.lastName} 
-                    onChange={this.handleLastNameChange} />
+                    <input type="text" value={this.state.lastName} onChange={this.handleLastNameChange} />
                 </label>
 
                 <label>
                     Phone Number
-                    <input type="text" 
-                    value={this.state.phoneNumber} 
-                    onChange={this.handlePhoneNumberChange} />
+                    <div className='div-phone-example'>&nbsp;&nbsp;(XXX-XXX-XXXX)</div>
+                    <input type="text" value={this.state.phoneNumber} onChange={this.handlePhoneNumberChange} />
                 </label>
 
                 <label>
                     Email
-                    <input type="email" 
-                    value={this.state.email} 
-                    onChange={this.handleEmailChange} />
+                    <input type="email" value={this.state.email} onChange={this.handleEmailChange} />
                 </label>
                 
                 <label>
                     Confirm Email
-                    <input type="email" 
-                    value={this.state.confirmEmail} 
-                    onChange={this.handleConfirmEmailChange} />
+                    <input type="email" value={this.state.confirmEmail} onChange={this.handleConfirmEmailChange} />
                 </label>
 
                 <label>
                     Username
-                    <input type="username" 
-                    value={this.state.userName} 
-                    onChange={this.handleUserNameChange} />
+                    <input type="username" value={this.state.userName} onChange={this.handleUserNameChange} />
                 </label>
 
                 <label>
                     Password
-                    <input type="password" 
-                    value={this.state.password} 
-                    onChange={this.handlePasswordChange} />
+                    <input type="password" value={this.state.password} onChange={this.handlePasswordChange} />
                 </label>
 
-                <button>Create an Account</button>
-                {/* <input type="submit" value="Register" /> */}
+                <br></br><br></br>
+                
+                <input type="submit" value="Sign-Up" />
             </form>
         )
     }

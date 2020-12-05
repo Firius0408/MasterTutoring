@@ -71,7 +71,7 @@ router.route('/like/:id').post((req, res) => {
             tutor.likes++;
 
             tutor.save()
-                .then(() => res.json('Tutor LIked!'))
+                .then(() => res.json('Tutor Liked!'))
                 .catch(err => res.status(400).json('Error: ' + err));
         })
         .catch(err => res.status(400).json('Error: ' + err));
@@ -83,7 +83,7 @@ router.route('/dislike/:id').post((req, res) => {
             tutor.dislikes++;
 
             tutor.save()
-                .then(() => res.json('Tutor LIked!'))
+                .then(() => res.json('Tutor disliked!'))
                 .catch(err => res.status(400).json('Error: ' + err));
         })
         .catch(err => res.status(400).json('Error: ' + err));
