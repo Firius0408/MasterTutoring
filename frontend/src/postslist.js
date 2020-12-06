@@ -26,7 +26,11 @@ class General extends React.Component {
 class PostList extends React.Component {
     constructor(props){
         super(props);
-        this.state = { posts: []}
+        this.state = { 
+            posts: [],
+            likes: {},
+            dislikes: {},
+        }
     }
 
     componentDidMount() {
@@ -37,7 +41,21 @@ class PostList extends React.Component {
             headers: { 'Content-Type': 'application/json'},
         })
         .then(response => response.json())
-        .then(data => this.setState( {posts: data }))
+        .then(data => {
+            let likes = {};
+            let dislikes = {};
+            data.forEach(element => {
+                likes[element._id] = element.likes
+            });
+            data.forEach(element => {
+                dislikes[element._id] = element.dislikes
+            });
+            this.setState({
+                posts: data,
+                likes: likes,
+                dislikes: dislikes,
+            });
+        })
         .catch(err => console.error('Error', err));
     }
 
@@ -49,7 +67,12 @@ class PostList extends React.Component {
             method: 'POST',
         })
         .then(response => response.json())
-        .then(data => console.log('Success:', data))
+        .then(data => {
+            console.log('Success:', data);
+            let likes = this.state.likes;
+            likes[id]++;
+            this.setState({ likes: likes });
+        })
         .catch(err => console.error('Error:', err));
     }
     handleDislike = (event) => { 
@@ -59,7 +82,12 @@ class PostList extends React.Component {
             method: 'POST',
         })
         .then(response => response.json())
-        .then(data => console.log('Success:', data))
+        .then(data => {
+            console.log('Success:', data);
+            let dislikes = this.state.dislikes;
+            dislikes[id]++;
+            this.setState({ dislikes: dislikes });
+        })
         .catch(err => console.error('Error:', err));
     }
 
@@ -83,8 +111,8 @@ class PostList extends React.Component {
                                         <p>In Person: {postDetail.canDrive ? "Yes": "No"}</p>
                                     </div>
                                     <div className='feedback'>
-                                        <p>Likes: {postDetail.likes}</p>
-                                        <p>Dislikes: {postDetail.dislikes}</p>
+                                        <p>Likes: {this.state.likes[postDetail._id]}</p>
+                                        <p>Dislikes: {this.state.dislikes[postDetail._id]}</p>
                                         <button onClick={this.handleLike} id={postDetail._id}>Like</button>
                                         <button onClick={this.handleDislike} id={postDetail._id}>Dislike</button>
                                     </div>
