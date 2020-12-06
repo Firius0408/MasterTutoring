@@ -126,12 +126,19 @@ class Form extends React.Component {
           <General text = 'Confirm Email' />
           <input type = 'email' name = 'confirmEmail' onChange={this.handleChange} />
           <General text = 'Phone Number' />
-          <input type='text' name ='phone' onChange={this.handleChange} />
+          <input type='tel' name ='phone' onChange={this.handleChange} pattern="[0-9]{10}"/>
           <General text = 'What subjects can you tutor for?' />
           <Description text = 'Ex: Calculus, Biology, Chemistry, U.S. History' />
-          <input type = 'text' name = 'subjects' onChange={this.handleChange} />
+          <select name = 'subjects' value = {this.state.subjects} onChange={this.handleChange}>
+            <option value='Math'>Math</option>
+            <option value='Science'>Science</option>
+            <option value='History'>History</option>
+          </select>
           <General text = 'Are you able to drive to in-person sessions?' />
-          <input type = 'text' name = 'canDrive' onChange={this.handleChange} />
+          <select name='canDrive' value={this.state.canDrive} onChange={this.handleChange}>
+            <option value={true}>Yes</option>
+            <option value={false}>No</option>
+          </select>
           <General text = 'Availability' />
           <Description text = 'Ex: Tuesday 2-6 p.m., Weekends 6-8 p.m.' />
           <input type = 'text' name = 'availability' onChange={this.handleChange} />
