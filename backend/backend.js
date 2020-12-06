@@ -6,6 +6,8 @@ const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const PORT = 4000;
 
+require('dotenv').config();
+
 app.use(cors({
     origin: "http://localhost:3000",
     credentials: true,
@@ -13,7 +15,7 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser());
 
-const uri = 'mongodb://127.0.0.1:27017/mastertutoring';
+const uri = process.env.MONGO_DATABASE_URL;
 
 mongoose.connect(uri, { useNewUrlParser: true });
 
