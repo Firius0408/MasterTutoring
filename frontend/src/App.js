@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import Header from './Header'
-import Home from './Home'
-import './App.css'
+import Header from './Header';
+import Home from './Home';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
