@@ -1,5 +1,6 @@
 import React from 'react';
 import './registerForm.css';
+import { Redirect } from 'react-router-dom';
 
 import {render} from "react-dom"; // For CSS
 
@@ -16,7 +17,8 @@ class RegistrationForm extends React.Component {
             email: '',
             confirmEmail: '',
             userName: '',
-            password: ''
+            password: '',
+            success: false,
         };
     }
 
@@ -63,7 +65,10 @@ class RegistrationForm extends React.Component {
             body: JSON.stringify(this.state)
         })
         .then(response => response.json())
-        .then(data => console.log('Success:', data))
+        .then(data => {
+            console.log('Success:', data);
+            this.setState({success: true});
+        })
         .catch(err => console.error('Error:', err));
         event.preventDefault();
     }
@@ -118,6 +123,7 @@ class RegistrationForm extends React.Component {
                 <br></br><br></br>
                 
                 <input type="submit" value="Sign-Up" />
+                {this.state.success ? <Redirect to="/" /> : <br></br>}
             </form>
         )
     }

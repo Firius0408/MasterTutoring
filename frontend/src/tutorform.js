@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './tutorform.css';
+import { Redirect } from 'react-router-dom';
 
 class Instructions extends React.Component {
   render() {
@@ -81,7 +82,8 @@ class Form extends React.Component {
       phone:'',
       subjects:'',
       canDrive: false,
-      availability:''
+      availability:'',
+      success: false,
     };
   }
 
@@ -103,7 +105,10 @@ class Form extends React.Component {
       body: JSON.stringify(this.state)
     })
     .then(response => response.json())
-    .then(data => console.log('Success:', data))
+    .then(data => {
+      console.log('Success:', data);
+      this.setState({success: true});
+    })
     .catch(err => console.error('Error:', err));
     event.preventDefault();
    }
@@ -131,6 +136,7 @@ class Form extends React.Component {
           <Description text = 'Ex: Tuesday 2-6 p.m., Weekends 6-8 p.m.' />
           <input type = 'text' name = 'availability' onChange={this.handleChange} />
           <input type = 'submit' value='Submit' />
+          {this.state.success ? <Redirect to="/" /> : <br></br>}
         </form>
       </div>
     )
