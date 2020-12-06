@@ -10,6 +10,7 @@ router.route('/').get((req, res) => {
 router.route('/add').post((req, res) => {
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
+    const bio = req.body.bio;
     const email = req.body.email;
     const phone = Number(req.body.phone);
     const subjects = req.body.subjects;
@@ -21,6 +22,7 @@ router.route('/add').post((req, res) => {
     const newTutor = new Tutor({
         firstName,
         lastName,
+        bio,
         email,
         phone,
         subjects,
@@ -52,6 +54,7 @@ router.route('/update/:id').post((req, res) => {
         .then(tutor => {
             tutor.firstName = req.body.firstName;
             tutor.lastName = req.body.lastName;
+            tutor.bio = req.body.bio;
             tutor.email = req.body.email;
             tutor.phone = Number(req.body.phone);
             tutor.subjects = req.body.subjects;

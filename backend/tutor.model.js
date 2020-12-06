@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 const tutorScheme = new Schema({
     firstName: String,
     lastName: String,
+    bio: String,
     email: String,
     phone: Number,
     subjects: String,
