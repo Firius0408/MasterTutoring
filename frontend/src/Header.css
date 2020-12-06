@@ -2,7 +2,7 @@
     display: flex;
     justify-content:space-between;
     align-items: center;
-    position:sticky;
+    position: relative;;
     top:0;
     background-color: white;
     z-index:100;
@@ -12,7 +12,8 @@
 .header__icon{
     object-fit:contain;
     height: 40px;
-    margin-left:20px;
+    position: ;
+    margin-left:-40px;
 }
 
 .header__center{
@@ -28,7 +29,7 @@
 
 .header__center >input {
     border: none;
-    width:400px;
+    width:700px;
     padding: 20px;
     outline-width:0;
 }

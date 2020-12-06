@@ -3,6 +3,7 @@ import './Home.css';
 import Banner from './Banner';
 import TutorPage from './tutorform';
 import Login from './login';
+import Footer from './footer';
 import Logout from './logout';
 import PostList from './postslist';
 import RegistrationForm from './registerForm';
@@ -12,16 +13,17 @@ function Home(props) {
     return(
         <div className='home'> 
             <Banner />
+            <Footer />
             <Switch>
-                <Route exact path="/">
-
+                <Route exact path="/Footer">
+                    <Footer />
                 </Route>
                 <Route path="/Login">
                     <Login setLoggedIn={props.setLoggedIn}/>
                 </Route>
-                <Route path="/Logout">
+                 <Route path="/Logout">
                     <Logout setLoggedIn={props.setLoggedIn}/>
-                </Route>
+                </Route> 
                 <Route path="/Tutor">
                     <TutorPage />
                 </Route>

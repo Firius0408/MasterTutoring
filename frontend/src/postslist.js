@@ -1,33 +1,23 @@
 import React from 'react';
-
-
-//MAY USE THIS
-
-class General extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {text: null,};
-    }
-    
-    render() {
-      return (
-        <div>
-          <p className="general1">
-            {this.props.text} {" "} 
-          </p>
-          <p className="general2">
-             * {""}
-          </p>
-        </div>
-      );
-    }
-  }
+import './postslist.css'
 
 class PostList extends React.Component {
     constructor(props){
         super(props);
         this.state = { 
-            posts: [],
+            posts: [
+                {"firstName": "Lance",
+                 "lastName": "Ding",
+                 "Bio":
+                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex, in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut",
+                 "phone": 9494441885,
+                 "email": "lanceding2001@gmail.com",
+                 "subjects":"Math",
+                 "canDrive":"Yes",
+                 "Likes": 7,
+                 "Dislikes":7
+
+                }],
             likes: {},
             dislikes: {},
         }
@@ -95,26 +85,31 @@ class PostList extends React.Component {
     render(){
         return(
             <div>
-                <h1> Tutors</h1>
-                <br></br>
                 <br></br>
                     {this.state.posts.map((postDetail)=>{
                         return <div className='tutorPost' key={postDetail._id}>
                                     <div className='tutorName'>
                                         <h2>{postDetail.firstName} {postDetail.lastName}</h2>
                                     </div>
-                                    <div className='contactInfo'>
-                                        <p>Phone: {postDetail.phone} Email: {postDetail.email}</p>
+                                    <div className='bio'>
+                                        <h3>Bio  </h3>
+                                        <h5>Subject: {postDetail.subjects}</h5>
+                                        <h5>In person: {postDetail.canDrive ? "Yes": "No"}</h5>
+                                        <p>{postDetail.Bio}</p>
                                     </div>
-                                    <div className='generalInfo'>
-                                        <p>Subjects: {postDetail.subjects}</p>
-                                        <p>In Person: {postDetail.canDrive ? "Yes": "No"}</p>
+                                    <div className='contactInfo'>
+                                        <h3>Contact</h3>
+                                        <p>Phone: {postDetail.phone}</p> 
+                                        <p>Email: {postDetail.email}</p>
                                     </div>
                                     <div className='feedback'>
+                                        <h3>Approval</h3>
                                         <p>Likes: {this.state.likes[postDetail._id]}</p>
                                         <p>Dislikes: {this.state.dislikes[postDetail._id]}</p>
-                                        <button onClick={this.handleLike} id={postDetail._id}>Like</button>
-                                        <button onClick={this.handleDislike} id={postDetail._id}>Dislike</button>
+                                        <div className= "Like">
+                                            <button className="Like" onClick={this.handleLike} id={postDetail._id}>Like</button>
+                                            <button  className="Like"onClick={this.handleDislike} id={postDetail._id}>Dislike</button>
+                                        </div>
                                     </div>
                                     <br></br>
                                     <br></br>

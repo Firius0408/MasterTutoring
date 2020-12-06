@@ -1,0 +1,12 @@
+.Footer{
+    background-image: url(./footer.png);
+    background-size: 1000px 100px;
+    height: 5vh;
+    position: relative;
+}
+h4{
+    padding-top: 7px;
+    color: gray;
+    text-align:center;
+    font-size: large;
+}
