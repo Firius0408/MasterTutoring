@@ -71,7 +71,7 @@ class PostList extends React.Component {
                 <br></br>
                 <br></br>
                     {this.state.posts.map((postDetail)=>{
-                        return <div className='tutorPost'>
+                        return <div className='tutorPost' key={postDetail._id}>
                                     <div className='tutorName'>
                                         <h2>{postDetail.firstName} {postDetail.lastName}</h2>
                                     </div>
