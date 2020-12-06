@@ -27,7 +27,7 @@ Mastered Tutors is a website for students to find tutors or become tutors.
 
 Mastered Tutors offers cheap, convenient, and effective educational help by providing a platform to 
 connect students with others like them. Those looking to tutor can signup through Mastered Tutors through 
-a pain-free registration and receive consistent opportunities to tutor.Those looking for tutoring can find
+a pain-free registration and receive consistent opportunities to tutor. Those looking for tutoring can find
 a tutor at a convenient time for them.
 
 ## Technologies and Architecture
@@ -48,8 +48,9 @@ a tutor at a convenient time for them.
 
 #### Tech Stack
 
-1. Express.JS
-2. MongoDB/Mongoose
+1. Node.js
+2. Express.js and Mongoose middleware
+3. MongoDB
 
 
 # Features
@@ -64,16 +65,22 @@ and like posts.
 $ git clone https://github.com/Firius0408/MasterTutoring.git
 ```
 
-2. Get into the correct working directory
+2. Install dependenices in the frontend
 ```
-$ cd MasterTutoring
-```
-
-3. Install necessary dependencies
-```
+$ cd MasterTutoring/frontend
 $ npm install
 ```
-4. Launch the app
+3. Launch frontend
+```
+$ npm start
+```
+
+4. Install dependencies in the backend
+```
+$ cd ../backend
+$ npm install
+```
+5. Launch backend
 ```
 $ npm start
 ```

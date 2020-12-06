@@ -6,21 +6,36 @@ import { Button } from '@material-ui/core'
 import LanguageIcon from "@material-ui/icons/Language";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import {Avatar} from "@material-ui/core";
+import { Link } from 'react-router-dom';
 
-function Header() {
+function Header(props) {
     return(
         <div className='header'>
-           <img className="header__icon" src={BusinessLogo} alt=""/>
+            <Link to="/">
+                <img className="header__icon" src={BusinessLogo} alt=""/>
+            </Link>
            {/* <div className='header__center'>
                <input type="text" />
                <SearchIcon />
            </div> */}
 
-           <div className='header__right'>
-               <Button variant='outlined'>Login</Button>
-               <Button variant='outlined'>Register</Button> 
-               <Button variant='outlined'>Tutor</Button>
-           </div>
+            <div className='header__right'>
+                {!props.loggedIn ? 
+                <Link to="/Login">
+                    <Button varient='outlined'>Login</Button>
+                </Link> 
+                : 
+                <Link to="/Logout">
+                    <Button varient='outlined'>Logout</Button>
+                </Link>
+                }
+                <Link to="/RegistrationForm">
+                    <Button varient='outlined'>Register</Button>    
+                </Link> 
+                <Link to="/Tutor">
+                    <Button varient='outlined'>Tutor</Button>
+                </Link>
+            </div>
         </div>
     )
 }

@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 
 const saltRounds = 10;
 let User = require('./user.model');
+let Cookie = require('./cookies.model');
 
 router.route('/').get((req, res) => {
     User.find()
@@ -35,6 +36,41 @@ router.route('/add').post((req, res) => {
         })
         .catch(err => res.status(400).json('Error: ' + err));
     
+});
+
+router.route('/login').post((req, res) => {
+    User.findById(req.body.userName)
+        .then(user => {
+            bcrypt.compare(req.body.password, user.password)
+                .then(result => {
+                    if (result) {
+                        bcrypt.hash("idk", saltRounds)
+                            .then(hash => {
+                                res.cookie('loginAuth', hash);
+                                const newCookie = new Cookie({
+                                    userName: req.body.userName,
+                                    cookieValue: hash,
+                                });
+
+                                newCookie.save()
+                                    .then(() => res.json('Cookie Added!'))
+                                    .catch(err => res.status(400).json('Error: ' + err));
+                            })
+                            .catch(err => res.status(400).json('Error: ' + err));
+                    }
+                    else {
+                        res.json('Failed');
+                    }
+                })
+                .catch(err => res.status(400).json('Error: ' + err));
+        })
+        .catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/logout').delete((req, res) => {
+    Cookie.findOneAndDelete({ cookieValue: req.cookies['loginAuth'] })
+        .then(() => res.clearCookie('loginAuth').json('Logged out.'))
+        .catch(err => res.status(400).json('Error: ' + err));
 });
 
 router.route('/:id').get((req, res) => {

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './tutorform.css';
+import { Redirect } from 'react-router-dom';
 
 class Instructions extends React.Component {
   render() {
@@ -81,7 +82,8 @@ class Form extends React.Component {
       phone:'',
       subjects:'',
       canDrive: false,
-      availability:''
+      availability:'',
+      success: false,
     };
   }
 
@@ -103,7 +105,10 @@ class Form extends React.Component {
       body: JSON.stringify(this.state)
     })
     .then(response => response.json())
-    .then(data => console.log('Success:', data))
+    .then(data => {
+      console.log('Success:', data);
+      this.setState({success: true});
+    })
     .catch(err => console.error('Error:', err));
     event.preventDefault();
    }
@@ -121,16 +126,24 @@ class Form extends React.Component {
           <General text = 'Confirm Email' />
           <input type = 'email' name = 'confirmEmail' onChange={this.handleChange} />
           <General text = 'Phone Number' />
-          <input type='text' name ='phone' onChange={this.handleChange} />
+          <input type='tel' name ='phone' onChange={this.handleChange} pattern="[0-9]{10}"/>
           <General text = 'What subjects can you tutor for?' />
           <Description text = 'Ex: Calculus, Biology, Chemistry, U.S. History' />
-          <input type = 'text' name = 'subjects' onChange={this.handleChange} />
+          <select name = 'subjects' value = {this.state.subjects} onChange={this.handleChange}>
+            <option value='Math'>Math</option>
+            <option value='Science'>Science</option>
+            <option value='History'>History</option>
+          </select>
           <General text = 'Are you able to drive to in-person sessions?' />
-          <input type = 'text' name = 'canDrive' onChange={this.handleChange} />
+          <select name='canDrive' value={this.state.canDrive} onChange={this.handleChange}>
+            <option value={true}>Yes</option>
+            <option value={false}>No</option>
+          </select>
           <General text = 'Availability' />
           <Description text = 'Ex: Tuesday 2-6 p.m., Weekends 6-8 p.m.' />
           <input type = 'text' name = 'availability' onChange={this.handleChange} />
           <input type = 'submit' value='Submit' />
+          {this.state.success ? <Redirect to="/" /> : <br></br>}
         </form>
       </div>
     )
