@@ -3,7 +3,8 @@ import './Home.css';
 import Banner from './Banner';
 import TutorPage from './tutorform';
 import Login from './login';
-import PostList from './postslist'
+import Logout from './logout';
+import PostList from './postslist';
 import RegistrationForm from './registerForm';
 import { Switch, Route } from 'react-router-dom';
 
@@ -17,6 +18,9 @@ function Home() {
                 </Route>
                 <Route path="/Login">
                     <Login />
+                </Route>
+                <Route path="/Logout">
+                    <Logout />
                 </Route>
                 <Route path="/Tutor">
                     <TutorPage />

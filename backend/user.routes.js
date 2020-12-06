@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 
 const saltRounds = 10;
 let User = require('./user.model');
+let Cookie = require('./cookies.model');
 
 router.route('/').get((req, res) => {
     User.find()
@@ -37,6 +38,41 @@ router.route('/add').post((req, res) => {
     
 });
 
+router.route('/login').post((req, res) => {
+    User.findById(req.body.userName)
+        .then(user => {
+            bcrypt.compare(req.body.password, user.password)
+                .then(result => {
+                    if (result) {
+                        bcrypt.hash("idk", saltRounds)
+                            .then(hash => {
+                                res.cookie('loginAuth', hash);
+                                const newCookie = new Cookie({
+                                    userName: req.body.userName,
+                                    cookieValue: hash,
+                                });
+
+                                newCookie.save()
+                                    .then(() => res.json('Cookie Added!'))
+                                    .catch(err => res.status(400).json('Error: ' + err));
+                            })
+                            .catch(err => res.status(400).json('Error: ' + err));
+                    }
+                    else {
+                        res.status(400).json('Unable to authenticate');
+                    }
+                })
+                .catch(err => res.status(400).json('Error: ' + err));
+        })
+        .catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/logout').delete((req, res) => {
+    Cookie.findOneAndDelete({ cookieValue: req.cookies['loginAuth'] })
+        .then(() => res.clearCookie('loginAuth').json('Logged out.'))
+        .catch(err => res.status(400).json('Error: ' + err));
+});
+
 router.route('/:id').get((req, res) => {
     User.findById(req.params.id)
         .then(user => res.json(user))
@@ -62,24 +98,6 @@ router.route('/update/:id').post((req, res) => {
 
             user.save()
                 .then(() => res.json('User Updated!'))
-                .catch(err => res.status(400).json('Error: ' + err));
-        })
-        .catch(err => res.status(400).json('Error: ' + err));
-});
-
-router.route('/login').post((req, res) => {
-    User.findById(req.body.userName)
-        .then(user => {
-            bcrypt.compare(req.body.password, user.password)
-                .then(result => {
-                    if (result) {
-                        bcrypt.hash("idk", saltRounds)
-                            .then(hash => res.cookie('loginAuth', hash).json('Success'));
-                    }
-                    else {
-                        res.status(400).json('Unable to authenticate');
-                    }
-                })
                 .catch(err => res.status(400).json('Error: ' + err));
         })
         .catch(err => res.status(400).json('Error: ' + err));

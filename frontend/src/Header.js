@@ -6,9 +6,12 @@ import { Button } from '@material-ui/core'
 import LanguageIcon from "@material-ui/icons/Language";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import {Avatar} from "@material-ui/core";
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import Cookies from 'universal-cookie';
 
 function Header() {
+    const cookie = new Cookies();
+    const loggedIn = cookie.get('loginAuth');
     return(
         <div className='header'>
             <Link to="/">
@@ -20,9 +23,15 @@ function Header() {
            </div> */}
 
             <div className='header__right'>
+                {!loggedIn ? 
                 <Link to="/Login">
                     <Button varient='outlined'>Login</Button>
+                </Link> 
+                : 
+                <Link to="/Logout">
+                    <Button varient='outlined'>Logout</Button>
                 </Link>
+                }
                 <Link to="/RegistrationForm">
                     <Button varient='outlined'>Register</Button>    
                 </Link> 
