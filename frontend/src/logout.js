@@ -1,7 +1,7 @@
 import React from 'react';
 import Cookies from 'universal-cookie';
 
-function Logout() {
+function Logout(props) {
     const cookies = new Cookies();
     const apiURL = "http://localhost:4000/user/logout";
     fetch(apiURL, {
@@ -10,7 +10,10 @@ function Logout() {
     })
     .then(response => response.json())
     .then(data => console.log('Success:', data))
-    .then(() => cookies.remove('loginAuth'))
+    .then(() => {
+        cookies.remove('loginAuth');
+        props.setLoggedIn(false);
+    })
     .catch(err => console.error('Error:', err));
     return(
         <p>Logged Out</p>

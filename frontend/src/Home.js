@@ -8,7 +8,7 @@ import PostList from './postslist';
 import RegistrationForm from './registerForm';
 import { Switch, Route } from 'react-router-dom';
 
-function Home() {
+function Home(props) {
     return(
         <div className='home'> 
             <Banner />
@@ -17,10 +17,10 @@ function Home() {
 
                 </Route>
                 <Route path="/Login">
-                    <Login />
+                    <Login setLoggedIn={props.setLoggedIn}/>
                 </Route>
                 <Route path="/Logout">
-                    <Logout />
+                    <Logout setLoggedIn={props.setLoggedIn}/>
                 </Route>
                 <Route path="/Tutor">
                     <TutorPage />

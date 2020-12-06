@@ -34,6 +34,7 @@ class Login extends React.Component {
             else {
                 console.log('Success:', data);
                 this.setState({success: true});
+                this.props.setLoggedIn(true);
             }
         })
         .catch(err => console.error('Error:', err));
