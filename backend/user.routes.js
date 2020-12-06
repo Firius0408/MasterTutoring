@@ -59,7 +59,7 @@ router.route('/login').post((req, res) => {
                             .catch(err => res.status(400).json('Error: ' + err));
                     }
                     else {
-                        res.status(400).json('Unable to authenticate');
+                        res.json('Failed');
                     }
                 })
                 .catch(err => res.status(400).json('Error: ' + err));

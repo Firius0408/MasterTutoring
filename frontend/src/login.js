@@ -1,13 +1,15 @@
 import React from 'react';
 import BusinessLogo from './BusinessLogo.png';
 import './login.css';
+import { Redirect } from 'react-router-dom';
 
 class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             userName:'',
-            password:''
+            password:'',
+            success: false,
         };
     }
 
@@ -25,7 +27,15 @@ class Login extends React.Component {
             body: JSON.stringify(this.state)
         })
         .then(response => response.json())
-        .then(data => console.log('Success:', data))
+        .then(data => {
+            if (data === 'Failed') {
+                alert('Incorrect');
+            }
+            else {
+                console.log('Success:', data);
+                this.setState({success: true});
+            }
+        })
         .catch(err => console.error('Error:', err));
         e.preventDefault();
     }
@@ -42,6 +52,7 @@ class Login extends React.Component {
                             <input type='username' name='userName' placeholder='username...' onChange={this.handleChange} />
                             <input type='password' name ='password' placeholder='password...' onChange={this.handleChange} />
                             <button>Log In</button>
+                            {this.state.success ? <Redirect to="/" /> : <br></br>}
                         </form>
                     </div>
                 </div>
