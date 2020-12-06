@@ -2,6 +2,8 @@ import { Button } from '@material-ui/core'
 import React, {useState} from 'react'
 import './Banner.css'
 import Search from './Search'
+import { Link } from 'react-router-dom';
+
 function Banner() {
     const [showSearch, setShowSearch] = useState(false);
     return(
@@ -15,7 +17,9 @@ function Banner() {
             <div className ='banner__info'>
                 <h1>Mastered Tutors</h1>
                 <h5>Tutoring Made Easy</h5>
-                <Button variant='outlined'>Find Help Today</Button>
+                <Link to="/PostList">
+                    <Button variant='outlined'>Find Help Today</Button>
+                </Link>
             </div>
         </div>
     )
