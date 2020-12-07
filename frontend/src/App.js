@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <Header loggedIn={loggedIn}/>
-      <Home setLoggedIn={setLoggedIn}/>
+      <Home loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>
     </div>
   );
 }

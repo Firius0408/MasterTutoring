@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 class Profile extends React.Component {
     constructor(props) {
@@ -38,7 +39,9 @@ class Profile extends React.Component {
 
     render() {
         return(
-            <form onSubmit={this.handleSubmit}>
+          <div>
+            {this.props.loggedIn ? 
+                <form onSubmit={this.handleSubmit}>
                 <input type='text' name='firstName' value={this.state.firstName} onChange={this.handleChange} />
                 <input type='text' name='lastName' value={this.state.lastName} onChange={this.handleChange} />
                 <input type='text' name='phoneNumber' value={this.state.phoneNumber} onChange={this.handleChange} />
@@ -47,6 +50,10 @@ class Profile extends React.Component {
                 <input type='password' name='password' placeholder='password' value={this.state.password} onChange={this.handleChange} />
                 <input type='submit' value='Edit Profile' />
             </form>
+            :
+            <Redirect to="/" />
+            }
+          </div>
     )   
     }
 }

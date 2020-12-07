@@ -33,7 +33,7 @@ function Home(props) {
                     <PostList />
                 </Route>
                 <Route path="/Profile">
-                    <Profile />
+                    <Profile loggedIn={props.loggedIn}/>
                 </Route>
             </Switch>
             <Footer />
