@@ -128,7 +128,7 @@ class Form extends React.Component {
           <General text = 'Phone Number' />
           <input type='tel' name ='phone' onChange={this.handleChange} pattern="[0-9]{10}"/>
           <General text = 'What subjects can you tutor for?' />
-          <Description text = 'Ex: Calculus, Biology, Chemistry, U.S. History' />
+          {/*<Description text = 'Ex: Calculus, Biology, Chemistry, U.S. History' />*/}
           <select name = 'subjects' value = {this.state.subjects} onChange={this.handleChange}>
             <option value='Math'>Math</option>
             <option value='Science'>Science</option>
