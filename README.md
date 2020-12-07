@@ -80,7 +80,14 @@ $ npm start
 $ cd ../backend
 $ npm install
 ```
-5. Launch backend
+
+5. Install environmental variable to backend
+```
+$ echo MONGO_DATABASE_URL=insert_url_to_mongo_database_here > .env
+```
+
+
+6. Launch backend
 ```
 $ npm start
 ```
