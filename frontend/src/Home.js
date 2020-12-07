@@ -12,10 +12,9 @@ import { Switch, Route } from 'react-router-dom';
 function Home(props) {
     return(
         <div className='home'> 
-            <Banner />
             <Switch>
                 <Route exact path="/">
-
+                    <Banner />
                 </Route>
                 <Route path="/Login">
                     <Login setLoggedIn={props.setLoggedIn}/>
