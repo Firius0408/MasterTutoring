@@ -108,7 +108,7 @@ class PostList extends React.Component {
                                             <p>Dislikes: {this.state.dislikes[postDetail._id]}</p>
                                         </div>
                                     </div>
-                                    <div className= "Like">
+                                    <div className= "LikeBox" type="Button">
                                         <button className="Like" onClick={this.handleLike} id={postDetail._id}>Like</button>
                                         <button  className="Like"onClick={this.handleDislike} id={postDetail._id}>Dislike</button>
                                     </div>
