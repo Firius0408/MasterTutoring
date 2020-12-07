@@ -46,7 +46,7 @@ router.route('/login').post((req, res) => {
                     if (result) {
                         bcrypt.hash("idk", saltRounds)
                             .then(hash => {
-                                res.cookie('loginAuth', hash);
+                                res.cookie('loginAuth', hash, {maxAge: 360000});
                                 const newCookie = new Cookie({
                                     userName: req.body.userName,
                                     cookieValue: hash,
