@@ -9,45 +9,27 @@
     width:100%;
 
 }
-.header__icon{
+/* Corresponds with logo image */
+.header_icon{
     object-fit:contain;
     height: 40px;
-    position: ;
-    margin-left:-40px;
+    margin-left:-120px;
 }
 
-.header__center{
-    display:flex;
-    flex:1;
-    align-items:right;
-    max-width: fit-content;
-    padding: 10px;
-    height: 30px;
-    border: 1px solid lightgray;
-    border-radius: 999px;
-}
-
-.header__center >input {
-    border: none;
-    width:700px;
-    padding: 20px;
-    outline-width:0;
-}
-
-.header__right {
+.header_right {
     display: flex;
     align-items:center;
     justify-content:space-between;
     width: 15vw;
     padding: 20px;
     margin-right: 80px;
-
 }
-.header__right >Button{
+
+.header_right[Button=varient]{
     margin-left: 20px;
     color: white;
     font-size: xx-small;
     background-color:black;
     padding-left: 30px;
     padding-right: 30px;
-}
+} 

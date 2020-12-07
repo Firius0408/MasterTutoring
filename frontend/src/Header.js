@@ -12,14 +12,14 @@ function Header(props) {
     return(
         <div className='header'>
             <Link to="/">
-                <img className="header__icon" src={BusinessLogo} alt=""/>
+                <img className="header_icon" src={BusinessLogo} alt=""/>
             </Link>
            {/* <div className='header__center'>
                <input type="text" />
                <SearchIcon />
            </div> */}
 
-            <div className='header__right'>
+            <div className='header_right'>
                 {!props.loggedIn ? 
                 <Link to="/Login">
                     <Button varient='outlined'>Login</Button>
