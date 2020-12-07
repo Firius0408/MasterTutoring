@@ -13,10 +13,9 @@ function Home(props) {
     return(
         <div className='home'> 
             <Banner />
-            <Footer />
             <Switch>
-                <Route exact path="/Footer">
-                    <Footer />
+                <Route exact path="/">
+
                 </Route>
                 <Route path="/Login">
                     <Login setLoggedIn={props.setLoggedIn}/>
@@ -34,6 +33,7 @@ function Home(props) {
                     <PostList />
                 </Route>
             </Switch>
+            <Footer />
         </div>
     )
 }
