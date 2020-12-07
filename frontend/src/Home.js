@@ -7,6 +7,7 @@ import Footer from './footer';
 import Logout from './logout';
 import PostList from './postslist';
 import RegistrationForm from './registerForm';
+import Profile from './profile';
 import { Switch, Route } from 'react-router-dom';
 
 function Home(props) {
@@ -30,6 +31,9 @@ function Home(props) {
                 </Route>
                 <Route path="/PostList">
                     <PostList />
+                </Route>
+                <Route path="/Profile">
+                    <Profile />
                 </Route>
             </Switch>
             <Footer />

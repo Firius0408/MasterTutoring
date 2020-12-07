@@ -35,6 +35,11 @@ function Header(props) {
                 <Link to="/Tutor">
                     <Button varient='outlined'>Tutor</Button>
                 </Link>
+                {props.loggedIn && 
+                    <Link to="/Profile">
+                        <Button varient='outlined'>Profile</Button>
+                    </Link>
+                }
             </div>
         </div>
     )
