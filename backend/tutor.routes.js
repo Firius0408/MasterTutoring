@@ -8,14 +8,9 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/add').post((req, res) => {
-    const firstName = req.body.firstName;
-    const lastName = req.body.lastName;
-    const bio = req.body.bio;
-    const email = req.body.email;
+    const { firstName, lastName, bio, email, subjects, availability } = req.body;
     const phone = Number(req.body.phone);
-    const subjects = req.body.subjects;
     const canDrive = Boolean(req.body.canDrive);
-    const availability = req.body.availability;
     const likes = 0;
     const dislikes = 0;
 

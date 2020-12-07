@@ -12,13 +12,8 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/add').post((req, res) => {
-    const userName = req.body.userName;
-    const firstName = req.body.firstName;
-    const lastName = req.body.lastName;
-    const phoneNumber = Number(req.body.phoneNumber);
-    const email = req.body.email;
-
-    bcrypt.hash(req.body.password, saltRounds)
+    const { userName, firstName, lastName, phoneNumber, email, password } = req.body;
+    bcrypt.hash(password, saltRounds)
         .then(hash => {
             const newUser = new User({
                 _id: userName,
