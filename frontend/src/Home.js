@@ -1,5 +1,4 @@
 import React from 'react';
-import './Home.css';
 import Banner from './Banner';
 import TutorPage from './tutorform';
 import Login from './login';
