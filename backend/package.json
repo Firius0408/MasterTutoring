@@ -9,7 +9,6 @@
     "dev": "nodemon backend.js"
   },
   "author": "",
-  "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
