@@ -29,9 +29,10 @@ function Header(props) {
                     <Button varient='outlined'>Logout</Button>
                 </Link>
                 }
-                <Link to="/RegistrationForm">
+                {!props.loggedIn && <Link to="/RegistrationForm">
                     <Button varient='outlined'>Register</Button>    
                 </Link> 
+                }
                 <Link to="/Tutor">
                     <Button varient='outlined'>Tutor</Button>
                 </Link>
