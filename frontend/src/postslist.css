@@ -56,3 +56,12 @@ button{
     border-radius: 100px;
 }
 
+.contactInfo, .feedback{
+    width: 450px;
+}
+
+.Bottom{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

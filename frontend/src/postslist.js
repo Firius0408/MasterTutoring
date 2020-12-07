@@ -16,7 +16,6 @@ class PostList extends React.Component {
                  "canDrive":"Yes",
                  "Likes": 7,
                  "Dislikes":7
-
                 }],
             likes: {},
             dislikes: {},
@@ -97,19 +96,21 @@ class PostList extends React.Component {
                                         <h5>In person: {postDetail.canDrive ? "Yes": "No"}</h5>
                                         <p>{postDetail.Bio}</p>
                                     </div>
-                                    <div className='contactInfo'>
-                                        <h3>Contact</h3>
-                                        <p>Phone: {postDetail.phone}</p> 
-                                        <p>Email: {postDetail.email}</p>
-                                    </div>
-                                    <div className='feedback'>
-                                        <h3>Approval</h3>
-                                        <p>Likes: {this.state.likes[postDetail._id]}</p>
-                                        <p>Dislikes: {this.state.dislikes[postDetail._id]}</p>
-                                        <div className= "Like">
-                                            <button className="Like" onClick={this.handleLike} id={postDetail._id}>Like</button>
-                                            <button  className="Like"onClick={this.handleDislike} id={postDetail._id}>Dislike</button>
+                                    <div className='Bottom'>
+                                        <div className='contactInfo'>
+                                            <h3>Contact</h3>
+                                            <p>Phone: {postDetail.phone}</p> 
+                                            <p>Email: {postDetail.email}</p>
                                         </div>
+                                        <div className='feedback'>
+                                            <h3>Approval</h3>
+                                            <p>Likes: {this.state.likes[postDetail._id]}</p>
+                                            <p>Dislikes: {this.state.dislikes[postDetail._id]}</p>
+                                        </div>
+                                    </div>
+                                    <div className= "Like">
+                                        <button className="Like" onClick={this.handleLike} id={postDetail._id}>Like</button>
+                                        <button  className="Like"onClick={this.handleDislike} id={postDetail._id}>Dislike</button>
                                     </div>
                                     <br></br>
                                     <br></br>
