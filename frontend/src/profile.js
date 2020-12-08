@@ -80,7 +80,7 @@ class Profile extends React.Component {
                 <input type='submit' value='Edit Profile' />
             </form>
             :
-            <Redirect to="/" />
+            <Redirect push to="/" />
             }
           </div>
     )   
