@@ -2,7 +2,6 @@ import React from 'react';
 import Banner from './Banner';
 import TutorPage from './tutorform';
 import Login from './login';
-import Footer from './footer';
 import Logout from './logout';
 import PostList from './postslist';
 import RegistrationForm from './registerForm';
@@ -33,7 +32,6 @@ function Home(props) {
                     <Profile loggedIn={props.loggedIn}/>
                 </Route>
             </Switch>
-            <Footer />
         </div>
     )
 }

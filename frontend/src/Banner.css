@@ -9,13 +9,14 @@
     color: white;
     font-size: xx-large;
     padding-top: 20vh;
-    padding-left:200px;
     padding-right: 50px;
     padding-bottom:40px;
     margin-left: 200x;
     background-size: 500px 500px;
+    text-align:center;
     height: 65vh;
 }
+
 .banner__searchButton{
     background-color:black !important;
     font-weight:900 !important;
@@ -33,3 +34,44 @@
     background-color: white;
     color: black;
 }
+
+
+.footer_info {
+    padding-top: 7px;
+    color: white;
+    text-align:center;
+    font-size: large;
+    font-weight: bold;
+    height: 7vh;
+    background-color: black;
+    background-size: 1000px 100px;
+    position: relative;
+    justify-content: center;
+}
+
+.footer_about{
+    color: white;
+    margin-top: -20px;
+    padding-top: 15px;
+    text-align:center;
+    background-color:rgb(19, 6, 117);
+    background-size: 1000px 300px;
+    height: 35vh;
+    position: relative;
+}
+h6{
+    padding-left:150px;
+    padding-right:150px;
+    font-size: large;
+    color: rgb(238, 234, 234);
+}
+
+a {
+    color: white;
+}s
+  
+a:hover {
+    color: gray;
+}
+
+
