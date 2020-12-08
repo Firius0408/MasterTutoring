@@ -44,10 +44,10 @@ class Login extends React.Component {
         return(
             <div className = "login">
                 <form className = "login-form" onSubmit={this.handleSubmit}>
-                    <input type='login-username' name='username' placeholder='Username' onChange={this.handleChange} />
-                    <input type='login-password' name ='password' placeholder='Password' onChange={this.handleChange} />
-                    
-                    <input type="login-button" value="Log In" />
+                    <input type='username' id="loginUserStyle" name='userName' placeholder='Username' onChange={this.handleChange} />
+                    <input type='password' id="loginPasswordStyle" name ='password' placeholder='Password' onChange={this.handleChange} />
+                     
+                    <input type="submit" id="submitStyle" value="Log In" />
                     {this.state.success ? <Redirect to="/" /> : <br></br>}
                 </form>
 

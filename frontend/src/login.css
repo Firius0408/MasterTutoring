@@ -1,66 +1,3 @@
-/* .div-login{
-    width:400px;
-    height: 450px;
-    display: flex;
-    flex-direction:column;
-    justify-content: space-evenly;
-    margin: 0 auto;
-    border: 1px solid #dbdbdb;
-    border-radius: 5px;
-    padding: 10px;
-    margin-top :10vh;
-}
-
-
-
-.login_image {
-    object-fit:contain;
-    height: 40px;
-    align-self: center; 
-    padding-left: 120px;
-    justify-content: center;
-}
-
-input {
-    width: 95%;
-    border:1 px solid #dbdbdb;
-    padding: 5px;
-    margin: 2px 0;
-    border-radius: 5px;
-    background-color: #fafafa;
-    box-shadow: none;
-    font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
-}
-
-button {
-    widows: 100%; 
-    margin: 5px 0;
-    background-color: #163c75;
-    padding: 5px;
-    color: white;
-    text-align: center;
-    justify-content: center;
-} */
-
-/* .div-login-image {
-    object-fit: contain;
-    height: 40px;
-    margin-left:-120px;
-} */
-
-/* .div-login {
-    width:500px;
-    height: 350px;
-    display: flex;
-    flex-direction:column;
-    justify-content: center;
-    border: 1px solid #dbdbdb;
-    border-radius: 5px;
-    padding: 10px;
-} */
-
-
-
 .login {
     height: 100%;
     justify-content: center;
@@ -73,7 +10,7 @@ button {
     margin: 0 auto;
 }
 
-input[type=login-username] {
+#loginUserStyle {
     margin-top: 20px;
     margin-left: 20px;
     margin-right: 40px; 
@@ -84,11 +21,11 @@ input[type=login-username] {
     font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
 }
 
-input[type=login-username]:hover {
+#loginUserStyle:hover {
     width: 460px;
 }
 
-input[type=login-password] {
+#loginPasswordStyle {
     margin-top: 20px;
     margin-left: 20px;
     margin-right: 40px; 
@@ -99,11 +36,11 @@ input[type=login-password] {
     font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
 }
 
-input[type=login-password]:hover {
+#loginPasswordStyle:hover {
     width: 460px;
 }
 
-input[type=login-button] {
+#submitStyle {
     background-color: #163c75;
     color: white;
     text-align: center;
@@ -120,7 +57,7 @@ input[type=login-button] {
     justify-content: center;  
 }
 
-input[type=login-button]:hover {
+#submitStyle:hover {
     background-color: white;
     color: #163c75;
     border: 2px solid #163c75;
