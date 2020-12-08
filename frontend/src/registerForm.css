@@ -58,6 +58,9 @@ input {
     border: none;
     background-color: rgba(0, 0, 0, 0.05);
     transition: 0.3s all;
+    color: #163c75;
+    font-size: 16px;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
 }
 
 input:hover {
@@ -68,33 +71,8 @@ input:hover {
     height: 56px;
 }
 
-input[type=text] {
-    color: #163c75;
-    font-size: 16px;
-    font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
-}
-
-input[type=email] {
-    color: #163c75;
-    font-size: 16px;
-    font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
-}
-
-input[type=username] {
-    color: #163c75;
-    font-size: 16px;
-    font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
-}
-
-input[type=password] {
-    color: #163c75;
-    font-size: 16px;
-    font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
-}
-
-
 /* Styling for submit button */
-input[type=submit] {
+#submitButton {
     background-color: #163c75;
     color: white;
     border-radius: 4px;
@@ -109,7 +87,7 @@ input[type=submit] {
     display: flex;
 }
 
-input[type=submit]:hover{
+#submitButton:hover{
     background-color: white;
     color: #163c75;
     border: 2px solid #163c75;
