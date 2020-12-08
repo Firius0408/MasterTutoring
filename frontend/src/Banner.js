@@ -17,9 +17,6 @@ function Banner() {
             <div className ='banner__info'>
                 <h1>Mastered Tutors</h1>
                 <h5>Tutoring Made Easy</h5>
-                <Link to="/PostList">
-                    <Button variant='outlined'>Find Help Today</Button>
-                </Link>
             </div>
         </div>
     )

@@ -16,19 +16,6 @@
     background-size: 500px 500px;
     height: 65vh;
 }
-.banner__info > button {
-    background-color: black;
-    color: white;
-    margin-top:20px;
-    font-weight:600;
-    text-transform:inherit;
-}
-
-.banner__info > button:hover {
-    background-color: white;
-    color: black;
-}
-
 .banner__searchButton{
     background-color:black !important;
     font-weight:900 !important;
