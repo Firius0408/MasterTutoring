@@ -36,7 +36,6 @@ class Profile extends React.Component {
                     phoneNumber: data.phoneNumber,
                     email: data.email,
                 });
-                console.log(data);
             })
             .catch(err => console.error('Error:', err));
         })
