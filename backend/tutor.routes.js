@@ -7,6 +7,12 @@ router.route('/').get((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/search/:search').get((req, res) => {
+    Tutor.find({ subjects: req.params.search })
+        .then(tutors => res.json(tutors))
+        .catch(err => res.status(400).json('Error: ' + err));
+});
+
 router.route('/add').post((req, res) => {
     const { firstName, lastName, bio, email, subjects, availability } = req.body;
     const phone = Number(req.body.phone);

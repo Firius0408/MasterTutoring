@@ -23,7 +23,11 @@ class PostList extends React.Component {
     }
 
     componentDidMount() {
-        const apiURL = "http://localhost:4000/tutor/";
+        let apiURL = "http://localhost:4000/tutor/";
+        if (this.props.location.state) {
+            const {search} = this.props.location.state;
+            apiURL = apiURL + 'search/' + search.label;
+        }
 
         fetch(apiURL, {
             method: 'GET',
@@ -48,7 +52,6 @@ class PostList extends React.Component {
         .catch(err => console.error('Error', err));
     }
 
-    //TODO FINISH THESE FUNCTIONS, increment the number of Likes and Dislikes 
     handleLike = (event) => { 
         const id = event.target.id;
         const apiURL = "http://localhost:4000/tutor/like/" + id;

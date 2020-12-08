@@ -28,9 +28,7 @@ function Home(props) {
                 <Route path="/RegistrationForm">
                     <RegistrationForm />
                 </Route>
-                <Route path="/PostList">
-                    <PostList />
-                </Route>
+                <Route path="/PostList" render={(props) => <PostList {...props} />}/>
                 <Route path="/Profile">
                     <Profile loggedIn={props.loggedIn}/>
                 </Route>
