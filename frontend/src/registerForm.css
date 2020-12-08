@@ -11,7 +11,7 @@ body {
     font-size: 26px;
     line-height: 1.5;
     border-bottom: 2px groove #b5b4b1;
-    padding-bottom: 10px;
+    /* padding-bottom: 10px; */
 }
 
 .div-required {
@@ -20,7 +20,6 @@ body {
     font-size: 14px;
     display: inline;
     line-height: 1.5;
-    padding-top: 50px;
 }
 
 .div-required:before {

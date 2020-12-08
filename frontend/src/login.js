@@ -1,5 +1,4 @@
 import React from 'react';
-import BusinessLogo from './BusinessLogo.png';
 import './login.css';
 import { Redirect } from 'react-router-dom';
 
@@ -43,21 +42,22 @@ class Login extends React.Component {
 
     render(){
         return(
-            <div>
-                <div className ='div-login'>
-                     <div>
-                        <img src={BusinessLogo} alt=""/> 
-                     </div>
-                    <div>
-                        <form onSubmit={this.handleSubmit}>
-                            <input type='username' name='userName' placeholder='username...' onChange={this.handleChange} />
-                            <input type='password' name ='password' placeholder='password...' onChange={this.handleChange} />
-                            <button>Log In</button>
-                            {this.state.success ? <Redirect to="/" /> : <br></br>}
-                        </form>
-                    </div>
-                </div>
+            <div className = "login">
+                <form className = "login-form" onSubmit={this.handleSubmit}>
+                    <input type='login-username' name='username' placeholder='Username' onChange={this.handleChange} />
+                    <input type='login-password' name ='password' placeholder='Password' onChange={this.handleChange} />
+                    
+                    <input type="login-button" value="Log In" />
+                    {this.state.success ? <Redirect to="/" /> : <br></br>}
+                </form>
+
+                <br></br>
             </div>
+
+            
+
+
+            
         )
     }
 }
