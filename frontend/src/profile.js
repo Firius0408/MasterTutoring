@@ -39,7 +39,10 @@ class Profile extends React.Component {
             })
             .catch(err => console.error('Error:', err));
         })
-        .catch(err => console.error('Error:', err));
+        .catch(err => {
+            this.props.setLoggedIn(false);
+            console.error('Error:', err);
+        });
     }
 
     handleChange = (event) => {

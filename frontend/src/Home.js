@@ -29,7 +29,7 @@ function Home(props) {
                 </Route>
                 <Route path="/PostList" render={(props) => <PostList {...props} />}/>
                 <Route path="/Profile">
-                    <Profile loggedIn={props.loggedIn}/>
+                    <Profile loggedIn={props.loggedIn} setLoggedIn={props.setLoggedIn}/>
                 </Route>
             </Switch>
         </div>
