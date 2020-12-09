@@ -123,7 +123,7 @@ class RegistrationForm extends React.Component {
                 <br></br><br></br>
                 
                 <input type="submit" id="submitButton" value="Sign-Up" />
-                {this.state.success ? <Redirect to="/" /> : <br></br>}
+                {this.state.success && <Redirect to="/" />}
             </form>
         )
     }

@@ -48,7 +48,7 @@ class Login extends React.Component {
                     <input type='password' id="loginPasswordStyle" name ='password' placeholder='Password' onChange={this.handleChange} />
                      
                     <input type="submit" id="submitStyle" value="Log In" />
-                    {this.state.success ? <Redirect to="/" /> : <br></br>}
+                    {this.state.success && <Redirect to="/" />}
                 </form>
 
                 <br></br>

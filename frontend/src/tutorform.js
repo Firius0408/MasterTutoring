@@ -146,7 +146,7 @@ class Form extends React.Component {
           <Description text = 'Ex: Tuesday 2-6 p.m., Weekends 6-8 p.m.' />
           <input type = 'text' name = 'availability' onChange={this.handleChange} />
           <input type = 'submit' value='Submit' />
-          {this.state.success ? <Redirect push to="/" /> : <br></br>}
+          {this.state.success && <Redirect push to="/" />}
         </form>
       </div>
     )
