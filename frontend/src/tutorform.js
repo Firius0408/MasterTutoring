@@ -78,6 +78,7 @@ class Form extends React.Component {
       firstName:'',
       lastName:'',
       email:'',
+      bio:'',
       confirmEmail:'',
       phone:'',
       subjects:'',
@@ -121,6 +122,8 @@ class Form extends React.Component {
           <input type = 'text' name = 'firstName' onChange={this.handleChange} />
           <General text = 'Last Name' />
           <input type = 'text' name = 'lastName' onChange={this.handleChange} />
+          <General text = 'Bio' />
+          <input type = 'text' name = 'bio' onChange={this.handleChange} />
           <General text = 'Email' />
           <input type = 'email' name = 'email' onChange={this.handleChange} />
           <General text = 'Confirm Email' />

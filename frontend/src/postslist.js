@@ -8,7 +8,7 @@ class PostList extends React.Component {
             posts: [
                 {"firstName": "Lance",
                  "lastName": "Ding",
-                 "Bio":
+                 "bio":
                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus. Donec scelerisque sollicitudin enim eu venenatis. Duis tincidunt laoreet ex, in pretium orci vestibulum eget. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis pharetra luctus lacus ut",
                  "phone": 9494441885,
                  "email": "lanceding2001@gmail.com",
@@ -97,7 +97,7 @@ class PostList extends React.Component {
                                         <h3>Bio  </h3>
                                         <h5>Subject: {postDetail.subjects}</h5>
                                         <h5>In person: {postDetail.canDrive ? "Yes": "No"}</h5>
-                                        <p>{postDetail.Bio}</p>
+                                        <p>{postDetail.bio}</p>
                                     </div>
                                     <div className='Bottom'>
                                         <div className='contactInfo'>
