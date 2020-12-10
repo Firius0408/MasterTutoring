@@ -11,14 +11,12 @@ body {
   font-size: 26px;
   line-height: 1.5;
   border-bottom: 2px groove #b5b4b1;
-  padding-bottom: 10px;
 }
 
 .introduction {
   color: #163c75;
   font-weight: normal;
   font-size: 16px;
-  line-height: 1.5;
   display: inline;
 }
 
@@ -69,3 +67,85 @@ body {
   line-height: 1.5;
   display: inline;
 }
+
+#subjectStyle{
+  background-color: #163c75;
+  color: white;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+  padding: 16px 30px;
+  transition-duration: 0.3s;
+  width: 300px;
+  justify-content: left;
+}
+
+#subjectStyle:hover{
+  background-color: white;
+  color: #163c75;
+  border: 2px solid #163c75;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+  padding: 16px 24px;
+}
+
+#driveStyle {
+  background-color: #163c75;
+  color: white;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+  padding: 16px 30px;
+  transition-duration: 0.3s;
+  width: 300px;
+  justify-content: left;
+}
+
+#driveStyle:hover {
+  background-color: white;
+  color: #163c75;
+  border: 2px solid #163c75;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+  padding: 16px 24px;
+}
+
+/* Styling for submit button */
+#submitButton {
+  background-color: #163c75;
+  color: white;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+  padding: 16px 24px;
+  transition-duration: 0.3s;
+  width: 600px;
+  margin: 20px auto;
+  justify-content: center;
+  display: flex;
+}
+
+#submitButton:hover{
+  background-color: white;
+  color: #163c75;
+  border: 2px solid #163c75;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+  padding: 16px 24px;
+}
+
+button {
+  text-align: center;
+}
+
+
+
