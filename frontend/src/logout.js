@@ -1,5 +1,7 @@
 import React from 'react';
 import Cookies from 'universal-cookie';
+import Login from './login';
+import './login.css';
 
 function Logout(props) {
     const cookies = new Cookies();
@@ -16,7 +18,11 @@ function Logout(props) {
     })
     .catch(err => console.error('Error:', err));
     return(
-        <p>Logged Out</p>
+        // Styled this in login.css
+        <div className='logout'>
+            Logged Out
+        </div>
+        
     )
 }
 
