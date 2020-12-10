@@ -87,6 +87,7 @@ class PostList extends React.Component {
     render(){
         return(
             <div>
+                <div className='browseTutors'>Browse Tutors</div>
                 <br></br>
                     {this.state.posts.map((postDetail)=>{
                         return <div className='tutorPost' key={postDetail._id}>
@@ -99,6 +100,7 @@ class PostList extends React.Component {
                                         <h5>In person: {postDetail.canDrive ? "Yes": "No"}</h5>
                                         <p>{postDetail.bio}</p>
                                     </div>
+
                                     <div className='Bottom'>
                                         <div className='contactInfo'>
                                             <h3>Contact</h3>

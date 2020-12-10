@@ -130,22 +130,33 @@ class Form extends React.Component {
           <input type = 'email' name = 'confirmEmail' onChange={this.handleChange} />
           <General text = 'Phone Number' />
           <input type='tel' name ='phone' onChange={this.handleChange} pattern="[0-9]{10}"/>
+          <br></br>
+          <br></br>
           <General text = 'What subjects can you tutor for?' />
           {/*<Description text = 'Ex: Calculus, Biology, Chemistry, U.S. History' />*/}
-          <select name = 'subjects' value = {this.state.subjects} onChange={this.handleChange}>
+          <select name = 'subjects' id='subjectStyle' value = {this.state.subjects} onChange={this.handleChange}>
+            <option value='SelectSubject'>Select a Subject</option>
             <option value='Math'>Math</option>
             <option value='Science'>Science</option>
             <option value='History'>History</option>
           </select>
+          <br></br>
+          <br></br>          
           <General text = 'Are you able to drive to in-person sessions?' />
-          <select name='canDrive' value={this.state.canDrive} onChange={this.handleChange}>
+          <select name='canDrive' id='driveStyle' value={this.state.canDrive} onChange={this.handleChange}>
             <option value={true}>Yes</option>
             <option value={false}>No</option>
           </select>
+          <br></br>
+          <br></br>
           <General text = 'Availability' />
           <Description text = 'Ex: Tuesday 2-6 p.m., Weekends 6-8 p.m.' />
           <input type = 'text' name = 'availability' onChange={this.handleChange} />
-          <input type = 'submit' value='Submit' />
+
+          <br></br>
+          <br></br>
+
+          <input type = 'submit' id='submitButton' value='Submit' />
           {this.state.success && <Redirect push to="/" />}
         </form>
       </div>
