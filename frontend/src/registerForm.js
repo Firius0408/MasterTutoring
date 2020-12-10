@@ -96,7 +96,6 @@ class RegistrationForm extends React.Component {
 
                 <label>
                     Phone Number
-                    <div className='div-phone-example'>&nbsp;&nbsp;(XXX-XXX-XXXX)</div>
                     <input type="text" value={this.state.phoneNumber} onChange={this.handlePhoneNumberChange} />
                 </label>
 
