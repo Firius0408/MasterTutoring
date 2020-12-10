@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+import './profile.css';
 
 class Profile extends React.Component {
     constructor(props) {
@@ -79,7 +80,7 @@ class Profile extends React.Component {
                 <input type='email' name='email' placeholder='Email' value={this.state.email} onChange={this.handleChange} />
                 <input type='email' name='confirmEmail' placeholder='Confirm Email' value={this.state.confirmEmail} onChange={this.handleChange} />
                 <input type='password' name='password' placeholder='password' value={this.state.password} onChange={this.handleChange} />
-                <input type='submit' value='Edit Profile' />
+                <input type='submit' id='profileSubmit' value='Edit Profile' />
             </form>
             :
             <Redirect push to="/" />
