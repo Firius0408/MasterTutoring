@@ -96,7 +96,7 @@ class RegistrationForm extends React.Component {
 
                 <label>
                     Phone Number
-                    <input type="text" value={this.state.phoneNumber} onChange={this.handlePhoneNumberChange} />
+                    <input type="tel" value={this.state.phoneNumber} onChange={this.handlePhoneNumberChange} pattern="[0-9]{10}"/>
                 </label>
 
                 <label>
