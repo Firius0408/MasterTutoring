@@ -56,6 +56,7 @@ class RegistrationForm extends React.Component {
         const { email, confirmEmail } = this.state;
         if (email !== confirmEmail) {
             alert('Emails do not match');
+            event.preventDefault();
             return;
         }
         const apiURL = 'http://localhost:4000/user/add';
