@@ -29,20 +29,13 @@
     flex-direction: column;
 }
 
-/*the Following is not working yet*/
-.banner__search > button:hover {
-    background-color: white;
-    color: black;
-}
-
-
 .footer_info {
     padding-top: 7px;
     color: white;
     text-align:center;
     font-size: large;
     font-weight: bold;
-    height: 7vh;
+    height: 4vh;
     background-color: black;
     background-size: 1000px 100px;
     position: relative;
@@ -52,7 +45,7 @@
 .footer_about{
     color: white;
     margin-top: -20px;
-    padding-top: 15px;
+    padding-top: 10px;
     text-align:center;
     background-color:rgb(19, 6, 117);
     background-size: 1000px 300px;
@@ -68,7 +61,7 @@ h6{
 
 a {
     color: white;
-}s
+}
   
 a:hover {
     color: gray;
