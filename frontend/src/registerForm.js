@@ -2,8 +2,6 @@ import React from 'react';
 import './registerForm.css';
 import { Redirect } from 'react-router-dom';
 
-import {render} from "react-dom"; // For CSS
-
 // RegistrationForm contains the subdata and functions to handle changes and submit
 class RegistrationForm extends React.Component {
     constructor(props){

@@ -1,11 +1,7 @@
 import React from 'react';
 import './Header.css';
 import BusinessLogo from './images/BusinessLogo.png'
-import SearchIcon from "@material-ui/icons/Search";
 import { Button } from '@material-ui/core';
-import LanguageIcon from "@material-ui/icons/Language";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import {Avatar} from "@material-ui/core";
 import { Link } from 'react-router-dom';
 
 function Header(props) {

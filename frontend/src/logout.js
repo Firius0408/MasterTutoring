@@ -1,6 +1,5 @@
 import React from 'react';
 import Cookies from 'universal-cookie';
-import Login from './login';
 import './login.css';
 
 function Logout(props) {

@@ -2,7 +2,6 @@ import { Button } from '@material-ui/core'
 import React, {useState} from 'react'
 import './Banner.css'
 import Search from './Search'
-import { Link } from 'react-router-dom';
 
 function Banner() {
     const [showSearch, setShowSearch] = useState(false);
