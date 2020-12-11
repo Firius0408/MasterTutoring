@@ -1,8 +1,8 @@
 import React from 'react';
 import './Header.css';
-import BusinessLogo from './BusinessLogo.png'
+import BusinessLogo from './images/BusinessLogo.png'
 import SearchIcon from "@material-ui/icons/Search";
-import { Button } from '@material-ui/core'
+import { Button } from '@material-ui/core';
 import LanguageIcon from "@material-ui/icons/Language";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import {Avatar} from "@material-ui/core";
@@ -12,12 +12,8 @@ function Header(props) {
     return(
         <div className='header'>
             <Link to="/">
-                <img className="header_icon" src={BusinessLogo} alt=""/>
+                <img className="header_icon" src={BusinessLogo} alt="logo" />
             </Link>
-           {/* <div className='header__center'>
-               <input type="text" />
-               <SearchIcon />
-           </div> */}
 
             <div className='header_right'>
                 {!props.loggedIn ? 

@@ -1,12 +1,12 @@
 .banner {
-    background-image: url(./background2.png);
+    background-image: url(./images/background2.png);
     background-size: 1000px 500px;
     height: 64vh;
     position: relative;
 }
 
 .banner__info {
-    color: white;
+    color: black;
     font-size: xx-large;
     padding-top: 20vh;
     padding-right: 50px;
